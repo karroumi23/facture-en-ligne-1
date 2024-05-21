@@ -79,6 +79,7 @@ i{
    width: auto;
    border: none;
    background:rgba(102, 172, 236, 0.102) ;
+   outline: none;
 }
 
 .box-client-info input:hover{
