@@ -18,7 +18,7 @@ i{
     color: rgba(242, 163, 9, .7);
     cursor: pointer;
 }
-/* ----------------------------h2 */
+/* ------------------------------------------------h2 */
 
 .facture-section h2 {
     margin-top: 15px;
@@ -31,7 +31,7 @@ i{
 .facture-section  h2:hover{
     background-color: rgba(22, 130, 230, 0.204);
 }
-/* ----------------------------company-info */
+/* -------------------------------------------------company-info */
 .company-information {
      margin-top: 18%;
      padding-left: 10px;
@@ -55,7 +55,7 @@ i{
 }
 
 
-/* ------------------------------------client-info */
+/* --------------------------------------client-info */
 .client-information{
     width: 100%;
     display: flex;
@@ -70,9 +70,6 @@ i{
     margin-bottom: 15px; 
     text-align: end;
 }   
-
-
-
 
 .box-client-info input{
    max-width: 250px;
@@ -98,7 +95,7 @@ i{
     justify-content: right;
 }
 
-/*-------------------------------- the dates  */
+/*--------------------------------------- the dates  */
 
     table {
         /* border: 1px solid red; */
