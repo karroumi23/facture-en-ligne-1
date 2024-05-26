@@ -63,9 +63,15 @@ iTélClient.onclick = function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "iAddspan" icon
+  var id = 0;
   document.getElementById("iAddspan").addEventListener("click", function () {
     // Create a new span element
+    id++;
+    var addSpan = document.getElementById("addSpan");
     var newSpan = document.createElement("span");
+
+    // add id to the new span
+    newSpan.setAttribute("id", "newSpan" + id);
 
     // ***************************************************************************
     // Create a new <h4> element
@@ -81,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     newH4.appendChild(newInput);
 
     // Optionally, add some text to the <h4> element before the input
-    newH4.insertBefore(document.createTextNode("Label: "), newInput);
+    // newH4.insertBefore(document.createTextNode("Label: "), newInput);
 
     // Finally, append the <h4> element to the DOM, for example, to the body
     document.body.appendChild(newH4);
@@ -94,14 +100,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Create a new icon element
     var newIcon = document.createElement("i");
+    newIcon.setAttribute("id", "newicon" + id);
     newIcon.setAttribute("class", "fa-solid fa-circle-minus"); // Assuming you have the appropriate CSS classes
+
+    newIcon.onclick = function () {
+      newSpan.style.display = "none";
+    };
 
     // Append the h4, input, and icon to the new span
     newSpan.appendChild(newH4);
     newSpan.appendChild(newInput);
     newSpan.appendChild(newIcon);
+    
 
     // Append the new span to the parent element
-    this.parentNode.appendChild(newSpan);
+    addSpan.appendChild(newSpan);
   });
 });
+
+// Add function to the new icon
+
+ 
+
+
