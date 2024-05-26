@@ -41,7 +41,7 @@ i{
 }
 .company-information input{
     outline: none;
-    max-width: 300px;
+    max-width: 150px;
     width: auto;
     border: none;
     background:rgba(102, 172, 236, 0.102) ;
@@ -52,6 +52,18 @@ i{
 }
 .company-information span{
     display: flex;
+    align-items: center;
+}
+#addSpan{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+input[type="text"]{
+    width:100%;
+    padding :5px;
+    margin : 5px;
+    box-sizing: border-box;
 }
 
 
@@ -60,15 +72,14 @@ i{
     width: 100%;
     display: flex;
     justify-content: right;
-
 }
 
 .box-client-info {
     line-height: 1.5;
-    margin-top: 10%;
-    margin-right: 20px;
-    margin-bottom: 15px; 
-    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+     margin: 10px;
 }   
 
 .box-client-info input{
@@ -84,6 +95,7 @@ i{
 }
 .box-client-info span{
    display: flex;
+   align-items: center;
 }
 
 .box-client-info i{
