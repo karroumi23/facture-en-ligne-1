@@ -8,12 +8,13 @@
   display: flex;
   justify-content: center;
 align-items: center;
-  background: gray;
+  background: rgba(164, 110, 3, 0.7);
 }
 .facture-section{
     width: 60%;
     background:#fef8f8;
 }
+
 i{
     color: rgba(242, 163, 9, .7);
     cursor: pointer;
@@ -69,9 +70,9 @@ input[type="text"]{
 
 /* --------------------------------------client-info */
 .client-information{
-    width: 100%;
-    display: flex;
-    justify-content: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1.5;
 }
 
 .box-client-info {
@@ -83,12 +84,13 @@ input[type="text"]{
 }   
 
 .box-client-info input{
-   max-width: 250px;
-   width: auto;
-   border: none;
-   background:rgba(102, 172, 236, 0.102) ;
-   outline: none;
+    outline: none;
+    max-width: 150px;
+    width: auto;
+    border: none;
+    background:rgba(102, 172, 236, 0.102) ;
 }
+
 
 .box-client-info input:hover{
    background-color: rgba(22, 130, 230, 0.204);
@@ -101,6 +103,7 @@ input[type="text"]{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 5px;
 }
 
 .box-client-info i{
@@ -113,28 +116,34 @@ input[type="text"]{
 }
 
 /*--------------------------------------- the dates  */
-
-    table {
-        /* border: 1px solid red; */
+  table {
         border-collapse: collapse;
         width: calc(50% - 1px);
         margin-top: 35px;
-        margin-bottom: 35px;
+        margin: 35px 10px;
+}
 
-}
-.box-date .date-table{
-    line-height: 2;
-}
 
 .date-table th {
     border: 1px solid #b0adad;
+    height: 50px;
 }
 
 .date-table .first-child {
     background-color: #E7E6E6;
 }
-.date-table th .date{
-    margin: 20px;
-}
 
+.date-table .second-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.date-table .second-child input{
+    border: none;
+    text-align: center;
+    outline: none;
+}
+.date-table .second-child i{
+ margin-right: -9px;
+}
 
