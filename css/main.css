@@ -12,7 +12,7 @@ align-items: center;
 }
 .facture-section{
     width: 60%;
-    background:#fef8f8;
+    background:#fff;
 }
 
 i{
@@ -121,6 +121,7 @@ input[type="text"]{
         width: calc(50% - 1px);
         margin-top: 35px;
         margin: 35px 10px;
+        position:relative
 }
 
 
@@ -139,11 +140,22 @@ input[type="text"]{
     justify-content: center;
 }
 .date-table .second-child input{
+    max-width: 70px;
+    width:auto;
     border: none;
     text-align: center;
     outline: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    background:rgba(102, 172, 236, 0.102) ;
+    font-weight: 700;
+    font-size:medium;
+
 }
 .date-table .second-child i{
- margin-right: -9px;
+    position: absolute;
+    right:-6px;
+
+
 }
 

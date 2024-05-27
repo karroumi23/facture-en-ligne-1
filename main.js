@@ -146,5 +146,35 @@ document.addEventListener("DOMContentLoaded", function () {
 //******************* END  : Add an event to the plus icon  Client-info
 
 
+//***************************************************** start : the dates
+    //  create variabls
+    var trDateFacture = document.getElementById("trDateFacture");
+    var iconMinusFacture = document.getElementById("iconMinusFacture");
+
+    var trDateLivraison = document.getElementById("trDateLivraison");
+    var iconMinusLivraison = document.getElementById("iconMinusLivraison");
+
+    var trDatePaiement = document.getElementById("trDatePaiement");
+    var iconMinusPaiement = document.getElementById("iconMinusPaiement");
+
+  // create function for removing tr from table when i click on icon minus 
+
+    iconMinusFacture.onclick = function(){
+      trDateFacture.style.display = 'none';
+    }
+    iconMinusLivraison.onclick = function(){
+      trDateLivraison.style.display = 'none';
+    }
+    iconMinusPaiement.onclick = function(){
+      trDatePaiement.style.display = 'none';
+    }
+
+  // create function for removing tr from table date when i click on icon minus 
+  
+
+//****************************************************** END : the dates
+
+
+
 
 
