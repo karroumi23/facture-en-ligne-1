@@ -166,44 +166,48 @@ iconMinusPaiement.onclick = function () {
 
 //****************************************************** END : the dates
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Add event listener to the "iAddspan" icon
-  document.getElementById("iAddTrDate").addEventListener("click", function(){
-  // Create a new ( TR ) element
-  var newTr = document.createElement("tr");
+  // Add event listener to the "iAddTrDate" icon
+  document.getElementById("iAddTrDate").addEventListener("click", function () {
+    // Create a new (tr) element
+    var newTr = document.createElement("tr");
 
-  var newThFirst = document.createElement("th");
-  var newInputLeft = document.createElement("input");
+    // Create new (th) and (input) elements for the left side
+    var newThLeft = document.createElement("th");
+    var newInputLeft = document.createElement("input");
 
-  var newThSecond = document.createElement("th");
-  var newInput = document.createElement("input");
+    // Create new (th) and (input) elements for the right side
+    var newThRight = document.createElement("th");
+    var newInputRight = document.createElement("input");
 
-
-
-
-    // Optionally, set attributes for the (tr)(input) element
-    newTr.setAttribute("id","newTr");
-    newInput.setAttribute("id", "newInput");
-    newInput.setAttribute("placeholder", ".....goood");
+    // Optionally, set attributes for the(newThLeft & newThRight) elements
+    newThLeft.setAttribute("class", "newThLeft");
+    newThRight.setAttribute("class", "newThRight");
 
 
-   // Append the span to the first th
-   newThFirst.appendChild(newInputLeft);
-
-   // Append the input to the second th
-   newThSecond.appendChild(newInput);
-
-   // Append th elements to the tr
-   newTr.appendChild(newThFirst);
-   newTr.appendChild(newThSecond);
-  
-       // Append the new tr to the table or tbody element
-   var tableBody = document.getElementById("tableBody")
-   tableBody.appendChild(newTr)
+    // Optionally, set attributes for the (input-left) element
+    newInputLeft.setAttribute("class", "newInputLeft");
+    newInputLeft.setAttribute("placeholder", "En-tête");     
+    
+    // Optionally, set attributes for the (tr) and (input-right) elements
+    newTr.setAttribute("class", "newTr");
+    newInputRight.setAttribute("class", "newInputRight");
+    newInputRight.setAttribute("placeholder", "contenu");
 
 
+
+    // Append the input to the first th
+    newThLeft.appendChild(newInputLeft);
+
+    // Append the input to the second th
+    newThRight.appendChild(newInputRight);
+
+    // Append th elements to the tr
+    newTr.appendChild(newThLeft);
+    newTr.appendChild(newThRight);
+
+    // Append the new tr to the table or tbody element
+    var tableBody = document.getElementById("tableBody");
+    tableBody.appendChild(newTr);
   });
-
 });
