@@ -25,8 +25,8 @@ let iSiret = document.getElementById("iSiret");
 let spanTVA = document.getElementById("spanTVA");
 let iTVA = document.getElementById("iTVA");
 
-let spanTél = document.getElementById("spanTél");
-let iTél = document.getElementById("iTél");
+let spanTel = document.getElementById("spanTel");
+let iTel = document.getElementById("iTel");
 // -----create function
 iSiret.onclick = function () {
   spanSiret.style.display = "none";
@@ -34,12 +34,10 @@ iSiret.onclick = function () {
 iTVA.onclick = function () {
   spanTVA.style.display = "none";
 };
-iTél.onclick = function () {
-  spanTél.style.display = "none";
+iTel.onclick = function () {
+  spanTel.style.display = "none";
 };
 //******************* End  : remove element from company-info
-
-
 
 //******************* start  : Add an event to the plus icon  company-info
 
@@ -58,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var newInputContenu = document.createElement("input");
     newInputContenu.setAttribute("type", "text");
     // Set placeholder text for the input
-    newInputContenu.setAttribute("placeholder", "Contenu"); 
+    newInputContenu.setAttribute("placeholder", "Contenu");
 
     // Create a new icon element
     var newIcon = document.createElement("i");
     // Assuming you have the appropriate CSS classes
-    newIcon.setAttribute("class", "fa-solid fa-circle-minus"); 
+    newIcon.setAttribute("class", "fa-solid fa-circle-minus");
     newIcon.onclick = function () {
       newSpan.style.display = "none";
     };
@@ -78,11 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //******************* END  : Add an event to the plus icon  company-info
-
-
-
-
-
 
 //*******************start  : remove element from Client-info
 
@@ -110,71 +103,107 @@ iTélClient.onclick = function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "iAddspan" icon
-  document.getElementById("iAddspanClient").addEventListener("click", function () {
-    // Create a new span element
-    var newSpan = document.createElement("span");
-        // Create a new input element info
-    var newInputInfo = document.createElement("input");
-    // Optionally, set attributes for the <input> element
-    newInputInfo.setAttribute("type", "text"); // Set the type of input
-    newInputInfo.setAttribute("placeholder", "Information");
-    newInputInfo.style.fontWeight = "bold";
+  document
+    .getElementById("iAddspanClient")
+    .addEventListener("click", function () {
+      // Create a new span element
+      var newSpan = document.createElement("span");
+      // Create a new input element info
+      var newInputInfo = document.createElement("input");
+      // Optionally, set attributes for the <input> element
+      newInputInfo.setAttribute("type", "text"); // Set the type of input
+      newInputInfo.setAttribute("placeholder", "Information");
+      newInputInfo.style.fontWeight = "bold";
 
-    // Create a new input element
-    var newInputContenu = document.createElement("input");
-    newInputContenu.setAttribute("type", "text");
-    // Set placeholder text for the input
-    newInputContenu.setAttribute("placeholder", "Contenu"); 
+      // Create a new input element
+      var newInputContenu = document.createElement("input");
+      newInputContenu.setAttribute("type", "text");
+      // Set placeholder text for the input
+      newInputContenu.setAttribute("placeholder", "Contenu");
 
-    // Create a new icon element
-    var newIcon = document.createElement("i");
-    // Assuming you have the appropriate CSS classes
-    newIcon.setAttribute("class", "fa-solid fa-circle-minus"); 
-    newIcon.onclick = function () {
-      newSpan.style.display = "none";
-    };
-    // Apapend the h4, input, and icon to the new span
-    newSpan.appendChild(newInputInfo);
-    newSpan.appendChild(newInputContenu);
-    newSpan.appendChild(newIcon);
+      // Create a new icon element
+      var newIcon = document.createElement("i");
+      // Assuming you have the appropriate CSS classes
+      newIcon.setAttribute("class", "fa-solid fa-circle-minus");
+      newIcon.onclick = function () {
+        newSpan.style.display = "none";
+      };
+      // Apapend the h4, input, and icon to the new span
+      newSpan.appendChild(newInputInfo);
+      newSpan.appendChild(newInputContenu);
+      newSpan.appendChild(newIcon);
 
-    // Append the new span to the parent element
-    var addSpan = document.getElementById("addSpanClient");
-    addSpan.appendChild(newSpan);
-  });
+      // Append the new span to the parent element
+      var addSpan = document.getElementById("addSpanClient");
+      addSpan.appendChild(newSpan);
+    });
 });
 //******************* END  : Add an event to the plus icon  Client-info
 
-
 //***************************************************** start : the dates
-    //  create variabls
-    var trDateFacture = document.getElementById("trDateFacture");
-    var iconMinusFacture = document.getElementById("iconMinusFacture");
+//  create variabls
+var trDateFacture = document.getElementById("trDateFacture");
+var iconMinusFacture = document.getElementById("iconMinusFacture");
 
-    var trDateLivraison = document.getElementById("trDateLivraison");
-    var iconMinusLivraison = document.getElementById("iconMinusLivraison");
+var trDateLivraison = document.getElementById("trDateLivraison");
+var iconMinusLivraison = document.getElementById("iconMinusLivraison");
 
-    var trDatePaiement = document.getElementById("trDatePaiement");
-    var iconMinusPaiement = document.getElementById("iconMinusPaiement");
+var trDatePaiement = document.getElementById("trDatePaiement");
+var iconMinusPaiement = document.getElementById("iconMinusPaiement");
 
-  // create function for removing tr from table when i click on icon minus 
+// create function for removing ( tr )
+// from table when i click on icon minus
 
-    iconMinusFacture.onclick = function(){
-      trDateFacture.style.display = 'none';
-    }
-    iconMinusLivraison.onclick = function(){
-      trDateLivraison.style.display = 'none';
-    }
-    iconMinusPaiement.onclick = function(){
-      trDatePaiement.style.display = 'none';
-    }
-
-  // create function for removing tr from table date when i click on icon minus 
-  
+iconMinusFacture.onclick = function () {
+  trDateFacture.style.display = "none";
+};
+iconMinusLivraison.onclick = function () {
+  trDateLivraison.style.display = "none";
+};
+iconMinusPaiement.onclick = function () {
+  trDatePaiement.style.display = "none";
+};
 
 //****************************************************** END : the dates
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to the "iAddspan" icon
+  document.getElementById("iAddTrDate").addEventListener("click", function(){
+  // Create a new ( TR ) element
+  var newTr = document.createElement("tr");
+
+  var newThFirst = document.createElement("th");
+  var newInputLeft = document.createElement("input");
+
+  var newThSecond = document.createElement("th");
+  var newInput = document.createElement("input");
 
 
+
+
+    // Optionally, set attributes for the (tr)(input) element
+    newTr.setAttribute("id","newTr");
+    newInput.setAttribute("id", "newInput");
+    newInput.setAttribute("placeholder", ".....goood");
+
+
+   // Append the span to the first th
+   newThFirst.appendChild(newInputLeft);
+
+   // Append the input to the second th
+   newThSecond.appendChild(newInput);
+
+   // Append th elements to the tr
+   newTr.appendChild(newThFirst);
+   newTr.appendChild(newThSecond);
+  
+       // Append the new tr to the table or tbody element
+   var tableBody = document.getElementById("tableBody")
+   tableBody.appendChild(newTr)
+
+
+  });
+
+});

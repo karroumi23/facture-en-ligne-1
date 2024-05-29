@@ -19,6 +19,7 @@ i{
     color: rgba(242, 163, 9, .7);
     cursor: pointer;
 }
+
 /* ------------------------------------------------h2 */
 
 .facture-section h2 {
@@ -119,8 +120,7 @@ input[type="text"]{
   table {
         border-collapse: collapse;
         width: calc(50% - 1px);
-        margin-top: 35px;
-        margin: 35px 10px;
+        margin: 35px 10px 35px 10px;
         position:relative
 }
 
@@ -155,7 +155,11 @@ input[type="text"]{
 .date-table .second-child i{
     position: absolute;
     right:-6px;
+}
 
-
+#iAddTrDate{
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 17%;
 }
 
