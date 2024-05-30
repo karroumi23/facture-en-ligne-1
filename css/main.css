@@ -170,7 +170,7 @@ input[type="text"]{
     margin-top: -45px;
     margin-left: 17%;
 }
-/******************new boxes  */
+/*********START*******new boxes  */
 .date-table .newThLeft{
     background-color: #E7E6E6;
 }
@@ -195,11 +195,12 @@ input[type="text"]{
     font-family: serif;
     font-weight: 600;
     font-size:medium;
-
 }
-
-
-/******************new boxes  */
+.date-table .newThRight i{
+    position: absolute;
+    right:-6px;
+}
+/********END******new boxes  */
 
 
 

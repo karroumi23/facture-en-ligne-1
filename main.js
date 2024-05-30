@@ -164,7 +164,7 @@ iconMinusPaiement.onclick = function () {
   trDatePaiement.style.display = "none";
 };
 
-//****************************************************** END : the dates
+  // ++++++++++++++++++++create function add boxes to the table
 
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "iAddTrDate" icon
@@ -195,6 +195,13 @@ document.addEventListener("DOMContentLoaded", function () {
     newInputRight.setAttribute("placeholder", "contenu");
 
 
+          // Create a new icon element
+          var newIconPlus = document.createElement("i");
+          // Assuming you have the appropriate CSS classes
+          newIconPlus.setAttribute("class", "fa-solid fa-circle-minus");
+          newIconPlus.onclick = function () {
+            newTr.style.display = "none";
+          };
 
     // Append the input to the first th
     newThLeft.appendChild(newInputLeft);
@@ -205,9 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Append th elements to the tr
     newTr.appendChild(newThLeft);
     newTr.appendChild(newThRight);
+    newThRight.appendChild(newIconPlus);
 
     // Append the new tr to the table or tbody element
     var tableBody = document.getElementById("tableBody");
     tableBody.appendChild(newTr);
   });
 });
+//****************************************************** END : the dates
