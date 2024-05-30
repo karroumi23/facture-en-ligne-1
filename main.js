@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Optionally, set attributes for the (tr) and (input-right) elements
     newTr.setAttribute("class", "newTr");
     newInputRight.setAttribute("class", "newInputRight");
-    newInputRight.setAttribute("placeholder", "contenu");
+    newInputRight.setAttribute("type", "date");
 
 
           // Create a new icon element

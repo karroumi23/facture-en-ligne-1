@@ -17,7 +17,7 @@ align-items: center;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);}
 
 i{
-    color: rgba(242, 163, 9, .7);
+    color: rgb(249, 166, 1);
     cursor: pointer;
 }
 
@@ -108,10 +108,7 @@ input[type="text"]{
     margin-left: 5px;
 }
 
-.box-client-info i{
-   color: rgba(242, 163, 9, .7);
-   cursor: pointer;
-}
+
 .box-client-info .plus-client{
     display: flex;
     justify-content: right;
@@ -147,7 +144,7 @@ input[type="text"]{
     justify-content: center;
 }
 .date-table .second-child input{
-    max-width: 80px;
+    max-width: 100px;
     width:auto;
     border: none;
     text-align: center;
@@ -185,7 +182,7 @@ input[type="text"]{
     font-size:medium;
 }
 .date-table .newThRight input{
-    max-width: 80px;
+    max-width: 100px;
     width:auto;
     background:rgba(102, 172, 236, 0.102) ;
     text-align: center;
