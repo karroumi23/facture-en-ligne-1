@@ -164,7 +164,7 @@ iconMinusPaiement.onclick = function () {
   trDatePaiement.style.display = "none";
 };
 
-  // ++++++++++++++++++++create function add boxes to the table
+  // ++++++++++++++++++create function add boxes to the table
 
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "iAddTrDate" icon
@@ -220,3 +220,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //****************************************************** END : the dates
+
+
+//***************************************************** start : counting-table
+  //  create variabls
+  var bottomTr = document.getElementById("bottomTr");
+  var iconMinusCount = document.getElementById("iconMinusCoun");
+
+
+  // create function  removing ( tr )
+  iconMinusCoun.onclick = function(){
+    bottomTr.style.display = "none";
+  }
+ 
+
+//***************************************************** END : counting-table
