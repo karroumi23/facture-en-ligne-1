@@ -79,7 +79,7 @@
                  <tr id="trDateFacture" >
                    <th class="first-child"><span >Date de facture</span></th>
                    <th class="second-child"><input type="date" id="dateFacture" class="date-facture" />
-                           <i id="iconMinusFacture" class="fa-solid fa-circle-minus"></i></th>
+                           <i id="iconMinusFacture" class="fa-solid fa-circle-minus"  ></i></th>
                  </tr>
                  <tr id="trDateLivraison">
                     <th class="first-child"><span >Date de livraison</span></th>
@@ -89,7 +89,7 @@
                  <tr id="trDatePaiement">
                     <th class="first-child"><span >Echéance de paiement</span></th>
                     <th class="second-child"><input type="datetime-local" id="echéancePaiement" class="date" />
-                     <i id="iconMinusPaiement" class="fa-solid fa-circle-minus"></i></th>
+                     <i  id="iconMinusPaiement" class="fa-solid fa-circle-minus"></i></th>
                  </tr>
                  
 
@@ -98,7 +98,42 @@
                   <i id="iAddTrDate" class="fa-solid fa-circle-plus"></i>
 
            </div>
-          <!---------------- the dates end -->
+          <!---------------- the dates END -->
+
+
+          <!---------------- Counting table start -->
+
+          <div class="box-counting-table">
+            <table class="counting-table">
+                <tr id="topTr">
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire HT</th>
+                    <th>Prix total HT</th>
+                </tr>
+                <tr id="bottomTr">
+                    <th id="leftTh">
+                        <input type="text" placeholder="TITRE PRESTATION" >
+                        <input type="text" placeholder="Description prestation" >
+                    </th>
+                    <th>
+                        <input type="text" value="1">
+                    </th>
+                    <th id="thPrixUntair">
+                        <input type="text" placeholder="00.0" ><span>€</span>
+                    </th>
+                    <th id="thPrixTotal">
+                        <input type="text" placeholder="00.0" ><span>€</span>
+                        <i class="fa-solid fa-circle-minus"></i>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        
+          <!---------------- Counting table END -->
+
+
+
            
       </div>
       <!-- start facture -->

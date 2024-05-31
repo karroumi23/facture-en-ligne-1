@@ -11,13 +11,13 @@ align-items: center;
   background: #fff;
 }
 .facture-section{
-    width: 60%;
+    width: 75%;
     background-color: #fff;
     border: 1px solid #eee;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);}
 
 i{
-    color: rgb(249, 166, 1);
+    color: rgb(242, 164, 9);
     cursor: pointer;
 }
 
@@ -182,7 +182,7 @@ input[type="text"]{
     font-size:medium;
 }
 .date-table .newThRight input{
-    max-width: 100px;
+    max-width: 600px;
     width:auto;
     background:rgba(102, 172, 236, 0.102) ;
     text-align: center;
@@ -199,5 +199,73 @@ input[type="text"]{
 }
 /********END******new boxes  */
 
+/*---------------------------------------- counting table   */
 
+.box-counting-table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counting-table {
+    text-align: center;
+    width: 90%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-collapse: collapse;
+}
+#topTr{
+    background-color: #E7E6E6;
+}
+
+.counting-table th {
+    border: 1px solid #b0adad;
+    padding: 10px;
+}
+
+#leftTh {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#leftTh input{
+    font-size: 18px;
+    width: 100%;
+ }
+
+
+.counting-table input {
+    /* max-width: 70px; */
+    width: auto;
+    border: none;
+    outline: none;
+    background: rgba(102, 172, 236, 0.102);
+    color: #000000;
+    font-family: serif;
+    font-weight: 600;
+    font-size: medium;
+    text-align: center;
+}
+
+
+#thPrixUnitaire, #thPrixTotal {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#thPrixTotal i {
+    cursor: pointer;
+    position: absolute;
+    right:-6px;
+   top: 45%;
+}
+
+input[type="text"] {
+    width: 65%;
+    box-sizing: border-box;
+}
 
