@@ -125,17 +125,19 @@ input[type="text"]{
 
 .date-table th {
     border: 1px solid #b0adad;
-    height: 50px;
+    height: 55px;
 }
 
 .date-table .first-child {
     background-color: #E7E6E6;
+
 }
 .date-table .first-child span{
     color: #000000;
     font-family: serif;
     font-weight: 700;
     font-size:medium;
+
 }
 
 .date-table .second-child{
@@ -203,7 +205,6 @@ input[type="text"]{
 
 .box-counting-table {
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -212,7 +213,7 @@ input[type="text"]{
     text-align: center;
     width: 90%;
     margin-top: 35px;
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
     border-collapse: collapse;
 }
 #topTr{
@@ -225,7 +226,6 @@ input[type="text"]{
 }
 
 #leftTh {
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -261,11 +261,18 @@ input[type="text"]{
     cursor: pointer;
     position: absolute;
     right:-6px;
-   top: 45%;
+     top: 45%;
 }
 
 input[type="text"] {
     width: 65%;
     box-sizing: border-box;
 }
+/*********START*******new boxes  */
+#iAddTrCount{
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 35%;
+}
 
+/*********END*******new boxes  */
