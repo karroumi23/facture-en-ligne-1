@@ -213,7 +213,7 @@ input[type="text"]{
     text-align: center;
     width: 90%;
     margin-top: 35px;
-    /* margin-bottom: 35px; */
+    margin-left: 5%;
     border-collapse: collapse;
 }
 #topTr{
@@ -232,7 +232,7 @@ input[type="text"]{
 }
 #leftTh input{
     font-size: 18px;
-    width: 100%;
+    width: 90%;
  }
 
 

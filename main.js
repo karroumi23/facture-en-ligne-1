@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var newSpan = document.createElement("span");
       // Create a new input element info
       var newInputInfo = document.createElement("input");
-      // Optionally, set attributes for the <input> element
+      //  set attributes for the <input> element
       newInputInfo.setAttribute("type", "text"); // Set the type of input
       newInputInfo.setAttribute("placeholder", "Information");
       newInputInfo.style.fontWeight = "bold";
@@ -164,7 +164,7 @@ iconMinusPaiement.onclick = function () {
   trDatePaiement.style.display = "none";
 };
 
-  // ++++++++++++++++++create function add boxes to the table
+// ++++++++++++++++++create function add boxes to the table
 
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "iAddTrDate" icon
@@ -180,28 +180,26 @@ document.addEventListener("DOMContentLoaded", function () {
     var newThRight = document.createElement("th");
     var newInputRight = document.createElement("input");
 
-    // Optionally, set attributes for the(newThLeft & newThRight) elements
+    //  set attributes for the(newThLeft & newThRight) elements
     newThLeft.setAttribute("class", "newThLeft");
     newThRight.setAttribute("class", "newThRight");
 
-
-    // Optionally, set attributes for the (input-left) element
+    //  set attributes for the (input-left) element
     newInputLeft.setAttribute("class", "newInputLeft");
-    newInputLeft.setAttribute("placeholder", "En-tête");     
-    
-    // Optionally, set attributes for the (tr) and (input-right) elements
+    newInputLeft.setAttribute("placeholder", "En-tête");
+
+    //  set attributes for the (tr) and (input-right) elements
     newTr.setAttribute("class", "newTr");
     newInputRight.setAttribute("class", "newInputRight");
     newInputRight.setAttribute("type", "date");
 
-
-          // Create a new icon element
-          var newIconPlus = document.createElement("i");
-          // Assuming you have the appropriate CSS classes
-          newIconPlus.setAttribute("class", "fa-solid fa-circle-minus");
-          newIconPlus.onclick = function () {
-            newTr.style.display = "none";
-          };
+    // Create a new icon element
+    var newIconPlus = document.createElement("i");
+    // Assuming you have the appropriate CSS classes
+    newIconPlus.setAttribute("class", "fa-solid fa-circle-minus");
+    newIconPlus.onclick = function () {
+      newTr.style.display = "none";
+    };
 
     // Append the input to the first th
     newThLeft.appendChild(newInputLeft);
@@ -221,17 +219,53 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //****************************************************** END : the dates
 
-
 //***************************************************** start : counting-table
-  //  create variabls
-  var bottomTr = document.getElementById("bottomTr");
-  var iconMinusCount = document.getElementById("iconMinusCoun");
+//  create variabls
+var bottomTr = document.getElementById("bottomTr");
+var iconMinusCount = document.getElementById("iconMinusCoun");
 
+// create function  removing ( tr )
+iconMinusCount.onclick = function () {
+  bottomTr.style.display = "none";
+};
+// +++++++++++++create function add boxes to the counting-table
+document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to the "iAddTrDate" icon
+  document.getElementById("iAddTrCount").addEventListener("click", function () {
+    // Create a new (tr) element
+    var newTr = document.createElement("tr");
 
-  // create function  removing ( tr )
-  iconMinusCoun.onclick = function(){
-    bottomTr.style.display = "none";
-  }
- 
+    // Create a new (th) & inputs
+    var thDescription = document.createElement("th");
+    var inputDescriptionTop = document.createElement("input");
+    var inputDescriptionBottom = document.createElement("input");
+
+    var thQuantite = document.createElement("th");
+    var inputQuantite = document.createElement("input");
+
+    var thUnitaire = document.createElement("th");
+    var inputUnitaire = document.createElement("input");
+    var spanUnitaire = document.createElement("span");
+
+    var thTotal = document.createElement("th");
+    var inputTotal = document.createElement("input");
+    var spanTotal = document.createElement("span");
+
+    //  set attributes for the ( TH ) and thier ( input ) & (span)
+    thDescription.setAttribute("id", "leftTh");
+    inputDescriptionTop.setAttribute("placeholder", "TITRE PRESTATION");
+    inputDescriptionBottom.setAttribute("placeholder", "Description prestation");
+    // inputQuantite
+    inputQuantite.setAttribute("value", "1");
+
+    thUnitaire.setAttribute("id", "thPrixUntair");
+    inputUnitaire.setAttribute("placeholder", "00.0");
+    spanUnitaire.textContent = '$$';
+
+    thTotal.setAttribute("id", "thPrixTotal");
+    inputTotal.setAttribute("placeholder", "00.0");
+    spanTotal.textContent = '$$$';    
+  });
+});
 
 //***************************************************** END : counting-table
