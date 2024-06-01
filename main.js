@@ -254,17 +254,40 @@ document.addEventListener("DOMContentLoaded", function () {
     //  set attributes for the ( TH ) and thier ( input ) & (span)
     thDescription.setAttribute("id", "leftTh");
     inputDescriptionTop.setAttribute("placeholder", "TITRE PRESTATION");
-    inputDescriptionBottom.setAttribute("placeholder", "Description prestation");
+    inputDescriptionBottom.setAttribute(
+      "placeholder",
+      "Description prestation"
+    );
     // inputQuantite
     inputQuantite.setAttribute("value", "1");
 
     thUnitaire.setAttribute("id", "thPrixUntair");
     inputUnitaire.setAttribute("placeholder", "00.0");
-    spanUnitaire.textContent = '$$';
+    spanUnitaire.textContent = "$$";
 
     thTotal.setAttribute("id", "thPrixTotal");
     inputTotal.setAttribute("placeholder", "00.0");
-    spanTotal.textContent = '$$$';    
+    spanTotal.textContent = "$$$";
+
+    //<<<<<Append the input to their th
+    thDescription.appendChild(inputDescriptionTop);
+    thDescription.appendChild(inputDescriptionBottom);
+
+    thQuantite.appendChild(inputQuantite);
+
+    thUnitaire.appendChild(inputUnitaire);
+    thUnitaire.appendChild(spanUnitaire);
+
+    thTotal.appendChild(inputTotal);
+    thTotal.appendChild(spanTotal);
+
+    //<<<<<Append the (th) to their (tr)
+    newTr.appendChild(thDescription);
+    newTr.appendChild(thQuantite);
+    newTr.appendChild(thUnitaire);
+    newTr.appendChild(thTotal);
+
+
   });
 });
 
