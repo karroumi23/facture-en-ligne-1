@@ -263,11 +263,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     thUnitaire.setAttribute("id", "thPrixUntair");
     inputUnitaire.setAttribute("placeholder", "00.0");
-    spanUnitaire.textContent = "$$";
+    spanUnitaire.textContent = "€";
 
     thTotal.setAttribute("id", "thPrixTotal");
     inputTotal.setAttribute("placeholder", "00.0");
-    spanTotal.textContent = "$$$";
+    spanTotal.textContent = "€";
 
     //<<<<<Append the input to their th
     thDescription.appendChild(inputDescriptionTop);
@@ -287,7 +287,9 @@ document.addEventListener("DOMContentLoaded", function () {
     newTr.appendChild(thUnitaire);
     newTr.appendChild(thTotal);
 
-
+    // Append the new tr to the table or tbody element
+    var tableCounting = document.getElementById("tableCounting");
+    tableCounting.appendChild(newTr);
   });
 });
 
