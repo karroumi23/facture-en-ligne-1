@@ -40,44 +40,41 @@ iTel.onclick = function () {
 //******************* End  : remove element from company-info
 
 //******************* start  : Add an event to the plus icon  company-info
+// Add event listener to the "iAddspan" icon
+document.getElementById("iAddspan").addEventListener("click", function () {
+  // Create a new span element
+  var newSpan = document.createElement("span");
+  var newInputInfo = document.createElement("input");
+  // Optionally, set attributes for the <input> element
+  newInputInfo.setAttribute("type", "text"); // Set the type of input
+  newInputInfo.setAttribute("placeholder", "Information");
+  newInputInfo.style.fontWeight = "bold";
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Add event listener to the "iAddspan" icon
-  document.getElementById("iAddspan").addEventListener("click", function () {
-    // Create a new span element
-    var newSpan = document.createElement("span");
-    var newInputInfo = document.createElement("input");
-    // Optionally, set attributes for the <input> element
-    newInputInfo.setAttribute("type", "text"); // Set the type of input
-    newInputInfo.setAttribute("placeholder", "Information");
-    newInputInfo.style.fontWeight = "bold";
+  // Create a new input element
+  var newInputContenu = document.createElement("input");
+  newInputContenu.setAttribute("type", "text");
+  // Set placeholder text for the input
+  newInputContenu.setAttribute("placeholder", "Contenu");
 
-    // Create a new input element
-    var newInputContenu = document.createElement("input");
-    newInputContenu.setAttribute("type", "text");
-    // Set placeholder text for the input
-    newInputContenu.setAttribute("placeholder", "Contenu");
+  // Create a new icon element
+  var newIcon = document.createElement("i");
+  // Assuming you have the appropriate CSS classes
+  newIcon.setAttribute("class", "fa-solid fa-circle-minus");
+  newIcon.onclick = function () {
+    newSpan.style.display = "none";
+  };
+  // Apapend the h4, input, and icon to the new span
+  newSpan.appendChild(newInputInfo);
+  newSpan.appendChild(newInputContenu);
+  newSpan.appendChild(newIcon);
 
-    // Create a new icon element
-    var newIcon = document.createElement("i");
-    // Assuming you have the appropriate CSS classes
-    newIcon.setAttribute("class", "fa-solid fa-circle-minus");
-    newIcon.onclick = function () {
-      newSpan.style.display = "none";
-    };
-    // Apapend the h4, input, and icon to the new span
-    newSpan.appendChild(newInputInfo);
-    newSpan.appendChild(newInputContenu);
-    newSpan.appendChild(newIcon);
-
-    // Append the new span to the parent element
-    var addSpan = document.getElementById("addSpan");
-    addSpan.appendChild(newSpan);
-  });
+  // Append the new span to the parent element
+  var addSpan = document.getElementById("addSpan");
+  addSpan.appendChild(newSpan);
 });
-//******************* END  : Add an event to the plus icon  company-info
+//********************** END  : Add an event to the plus icon  company-info
 
-//*******************start  : remove element from Client-info
+//*******************************start  : remove element from Client-info
 
 let spanSiretClient = document.getElementById("spanSiretClient");
 let iSiretClient = document.getElementById("iSiretClient");
@@ -101,43 +98,42 @@ iTélClient.onclick = function () {
 
 //******************* start  : Add an event to the plus icon  Client-info
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Add event listener to the "iAddspan" icon
-  document
-    .getElementById("iAddspanClient")
-    .addEventListener("click", function () {
-      // Create a new span element
-      var newSpan = document.createElement("span");
-      // Create a new input element info
-      var newInputInfo = document.createElement("input");
-      //  set attributes for the <input> element
-      newInputInfo.setAttribute("type", "text"); // Set the type of input
-      newInputInfo.setAttribute("placeholder", "Information");
-      newInputInfo.style.fontWeight = "bold";
+// Add event listener to the "iAddspan" icon
+document
+  .getElementById("iAddspanClient")
+  .addEventListener("click", function () {
+    // Create a new span element
+    var newSpan = document.createElement("span");
+    // Create a new input element info
+    var newInputInfo = document.createElement("input");
+    //  set attributes for the <input> element
+    newInputInfo.setAttribute("type", "text"); // Set the type of input
+    newInputInfo.setAttribute("placeholder", "Information");
+    newInputInfo.style.fontWeight = "bold";
 
-      // Create a new input element
-      var newInputContenu = document.createElement("input");
-      newInputContenu.setAttribute("type", "text");
-      // Set placeholder text for the input
-      newInputContenu.setAttribute("placeholder", "Contenu");
+    // Create a new input element
+    var newInputContenu = document.createElement("input");
+    newInputContenu.setAttribute("type", "text");
+    // Set placeholder text for the input
+    newInputContenu.setAttribute("placeholder", "Contenu");
 
-      // Create a new icon element
-      var newIcon = document.createElement("i");
-      // Assuming you have the appropriate CSS classes
-      newIcon.setAttribute("class", "fa-solid fa-circle-minus");
-      newIcon.onclick = function () {
-        newSpan.style.display = "none";
-      };
-      // Apapend the h4, input, and icon to the new span
-      newSpan.appendChild(newInputInfo);
-      newSpan.appendChild(newInputContenu);
-      newSpan.appendChild(newIcon);
+    // Create a new icon minus
+    var newIcon = document.createElement("i");
+    // Assuming you have the appropriate CSS classes
+    newIcon.setAttribute("class", "fa-solid fa-circle-minus");
+    newIcon.onclick = function () {
+      newSpan.style.display = "none";
+    };
+    // Apapend the h4, input, and icon to the new span
+    newSpan.appendChild(newInputInfo);
+    newSpan.appendChild(newInputContenu);
+    newSpan.appendChild(newIcon);
 
-      // Append the new span to the parent element
-      var addSpan = document.getElementById("addSpanClient");
-      addSpan.appendChild(newSpan);
-    });
-});
+    // Append the new span to the parent element
+    var addSpan = document.getElementById("addSpanClient");
+    addSpan.appendChild(newSpan);
+  });
+
 //******************* END  : Add an event to the plus icon  Client-info
 
 //***************************************************** start : the dates
@@ -163,60 +159,57 @@ iconMinusLivraison.onclick = function () {
 iconMinusPaiement.onclick = function () {
   trDatePaiement.style.display = "none";
 };
+// ++++++++++++++create function add boxes to the table-date
+// Add event listener to the "iAddTrDate" icon
+document.getElementById("iAddTrDate").addEventListener("click", function () {
+  // Create a new (tr) element
+  var newTr = document.createElement("tr");
 
-// ++++++++++++++++++create function add boxes to the table
+  // Create new (th) and (input) elements for the left side
+  var newThLeft = document.createElement("th");
+  var newInputLeft = document.createElement("input");
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Add event listener to the "iAddTrDate" icon
-  document.getElementById("iAddTrDate").addEventListener("click", function () {
-    // Create a new (tr) element
-    var newTr = document.createElement("tr");
+  // Create new (th) and (input) elements for the right side
+  var newThRight = document.createElement("th");
+  var newInputRight = document.createElement("input");
 
-    // Create new (th) and (input) elements for the left side
-    var newThLeft = document.createElement("th");
-    var newInputLeft = document.createElement("input");
+  //  set attributes for the(newThLeft & newThRight) elements
+  newThLeft.setAttribute("class", "newThLeft");
+  newThRight.setAttribute("class", "newThRight");
 
-    // Create new (th) and (input) elements for the right side
-    var newThRight = document.createElement("th");
-    var newInputRight = document.createElement("input");
+  //  set attributes for the (input-left) element
+  newInputLeft.setAttribute("class", "newInputLeft");
+  newInputLeft.setAttribute("placeholder", "En-tête");
 
-    //  set attributes for the(newThLeft & newThRight) elements
-    newThLeft.setAttribute("class", "newThLeft");
-    newThRight.setAttribute("class", "newThRight");
+  //  set attributes for the (tr) and (input-right) elements
+  newTr.setAttribute("class", "newTr");
+  newInputRight.setAttribute("class", "newInputRight");
+  newInputRight.setAttribute("type", "date");
 
-    //  set attributes for the (input-left) element
-    newInputLeft.setAttribute("class", "newInputLeft");
-    newInputLeft.setAttribute("placeholder", "En-tête");
+  // Create a new icon element
+  var newIconPlus = document.createElement("i");
+  // Assuming you have the appropriate CSS classes
+  newIconPlus.setAttribute("class", "fa-solid fa-circle-minus");
+  newIconPlus.onclick = function () {
+    newTr.style.display = "none";
+  };
 
-    //  set attributes for the (tr) and (input-right) elements
-    newTr.setAttribute("class", "newTr");
-    newInputRight.setAttribute("class", "newInputRight");
-    newInputRight.setAttribute("type", "date");
+  // Append the input to the first th
+  newThLeft.appendChild(newInputLeft);
 
-    // Create a new icon element
-    var newIconPlus = document.createElement("i");
-    // Assuming you have the appropriate CSS classes
-    newIconPlus.setAttribute("class", "fa-solid fa-circle-minus");
-    newIconPlus.onclick = function () {
-      newTr.style.display = "none";
-    };
+  // Append the input to the second th
+  newThRight.appendChild(newInputRight);
 
-    // Append the input to the first th
-    newThLeft.appendChild(newInputLeft);
+  // Append th elements to the tr
+  newTr.appendChild(newThLeft);
+  newTr.appendChild(newThRight);
+  newThRight.appendChild(newIconPlus);
 
-    // Append the input to the second th
-    newThRight.appendChild(newInputRight);
-
-    // Append th elements to the tr
-    newTr.appendChild(newThLeft);
-    newTr.appendChild(newThRight);
-    newThRight.appendChild(newIconPlus);
-
-    // Append the new tr to the table or tbody element
-    var tableBody = document.getElementById("tableBody");
-    tableBody.appendChild(newTr);
-  });
+  // Append the new tr to the table or tbody element
+  var tableBody = document.getElementById("tableBody");
+  tableBody.appendChild(newTr);
 });
+
 //****************************************************** END : the dates
 
 //***************************************************** start : counting-table
@@ -229,68 +222,79 @@ iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
 // +++++++++++++create function add boxes to the counting-table
-document.addEventListener("DOMContentLoaded", function () {
-  // Add event listener to the "iAddTrDate" icon
-  document.getElementById("iAddTrCount").addEventListener("click", function () {
-    // Create a new (tr) element
-    var newTr = document.createElement("tr");
 
-    // Create a new (th) & inputs
-    var thDescription = document.createElement("th");
-    var inputDescriptionTop = document.createElement("input");
-    var inputDescriptionBottom = document.createElement("input");
+// Add event listener to the "iAddTrDate" icon
+document.getElementById("iAddTrCount").addEventListener("click", function () {
+  // Create a new (tr) element
+  var newTr = document.createElement("tr");
 
-    var thQuantite = document.createElement("th");
-    var inputQuantite = document.createElement("input");
+  // Create a new (th) & inputs
+  var thDescription = document.createElement("th");
+  var inputDescriptionTop = document.createElement("input");
+  var inputDescriptionBottom = document.createElement("input");
 
-    var thUnitaire = document.createElement("th");
-    var inputUnitaire = document.createElement("input");
-    var spanUnitaire = document.createElement("span");
+  var thQuantite = document.createElement("th");
+  var inputQuantite = document.createElement("input");
 
-    var thTotal = document.createElement("th");
-    var inputTotal = document.createElement("input");
-    var spanTotal = document.createElement("span");
+  var thUnitaire = document.createElement("th");
+  var inputUnitaire = document.createElement("input");
+  var spanUnitaire = document.createElement("span");
 
-    //  set attributes for the ( TH ) and thier ( input ) & (span)
-    thDescription.setAttribute("id", "leftTh");
-    inputDescriptionTop.setAttribute("placeholder", "TITRE PRESTATION");
-    inputDescriptionBottom.setAttribute(
-      "placeholder",
-      "Description prestation"
-    );
-    // inputQuantite
-    inputQuantite.setAttribute("value", "1");
+  var thTotal = document.createElement("th");
+  var inputTotal = document.createElement("input");
+  var spanTotal = document.createElement("span");
 
-    thUnitaire.setAttribute("id", "thPrixUntair");
-    inputUnitaire.setAttribute("placeholder", "00.0");
-    spanUnitaire.textContent = "€";
+  //  set attributes for the ( TH ) and thier ( input ) & (span)
+  thDescription.setAttribute("id", "leftThNew");
+  inputDescriptionTop.setAttribute("placeholder", "TITRE PRESTATION");
+  inputDescriptionTop.setAttribute("type", "text");
+  inputDescriptionBottom.setAttribute("placeholder", "Description prestation");
+  inputDescriptionBottom.setAttribute("type", "text");
 
-    thTotal.setAttribute("id", "thPrixTotal");
-    inputTotal.setAttribute("placeholder", "00.0");
-    spanTotal.textContent = "€";
+  // inputQuantite
+  inputQuantite.setAttribute("value", "1");
+  inputQuantite.setAttribute("type", "text");
 
-    //<<<<<Append the input to their th
-    thDescription.appendChild(inputDescriptionTop);
-    thDescription.appendChild(inputDescriptionBottom);
+  thUnitaire.setAttribute("id", "thPrixUntair");
+  inputUnitaire.setAttribute("placeholder", "00.0");
+  inputUnitaire.setAttribute("type", "text");
+  spanUnitaire.textContent = "€";
 
-    thQuantite.appendChild(inputQuantite);
+  thTotal.setAttribute("id", "thPrixTotal");
+  inputTotal.setAttribute("placeholder", "00.0");
+  inputTotal.setAttribute("type", "text");
+  spanTotal.textContent = "€";
 
-    thUnitaire.appendChild(inputUnitaire);
-    thUnitaire.appendChild(spanUnitaire);
+  // Create a new icon minus
+  var newIcon = document.createElement("i");
+  // Assuming you have the appropriate CSS classes
+  newIcon.setAttribute("class", "fa-solid fa-circle-minus");
+  newIcon.onclick = function () {
+    newTr.style.display = "none";
+  };
 
-    thTotal.appendChild(inputTotal);
-    thTotal.appendChild(spanTotal);
+  //<<<<<Append the input to their th
+  thDescription.appendChild(inputDescriptionTop);
+  thDescription.appendChild(inputDescriptionBottom);
 
-    //<<<<<Append the (th) to their (tr)
-    newTr.appendChild(thDescription);
-    newTr.appendChild(thQuantite);
-    newTr.appendChild(thUnitaire);
-    newTr.appendChild(thTotal);
+  thQuantite.appendChild(inputQuantite);
 
-    // Append the new tr to the table or tbody element
-    var tableCounting = document.getElementById("tableCounting");
-    tableCounting.appendChild(newTr);
-  });
+  thUnitaire.appendChild(inputUnitaire);
+  thUnitaire.appendChild(spanUnitaire);
+
+  thTotal.appendChild(inputTotal);
+  thTotal.appendChild(spanTotal);
+  thTotal.appendChild(newIcon);
+
+  //<<<<<Append the (th) to their (tr)
+  newTr.appendChild(thDescription);
+  newTr.appendChild(thQuantite);
+  newTr.appendChild(thUnitaire);
+  newTr.appendChild(thTotal);
+
+  // Append the new tr to the table or tbody element
+  var tableCounting = document.getElementById("tableCounting");
+  tableCounting.appendChild(newTr);
 });
 
 //***************************************************** END : counting-table
