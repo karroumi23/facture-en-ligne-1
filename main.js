@@ -297,4 +297,24 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   tableCounting.appendChild(newTr);
 });
 
+//+++++++++ create counting function 
+  // add variables
+let Quantite = document.getElementById("Quantite");
+let unitaire = document.getElementById("unitaire");
+let total = document.getElementById("total");
+  // create function get total 
+function getTotal(){
+  if (unitaire.value != "") {
+    let result = Quantite.value * unitaire.value ;
+    total.innerHTML = result;
+    total.style.background = "#77DD77";
+}}
 //***************************************************** END : counting-table
+
+
+
+
+
+
+
+
