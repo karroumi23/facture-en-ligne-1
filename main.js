@@ -221,14 +221,33 @@ var iconMinusCount = document.getElementById("iconMinusCoun");
 iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
+//+++++++++ create counting function 
+  // add variables
+  let Quantite = document.getElementById("Quantite");
+  let unitaire = document.getElementById("unitaire");
+  let total = document.getElementById("total");
+    // create function get total 
+  function getTotal(){
+    if (unitaire.value != "") {
+      let result = Quantite.value * unitaire.value ;
+      total.innerHTML = result.toFixed(2);
+      total.style.background = "#77DD77";
+  }}
+// *
+// *
+// *
+// *
+// *
+// *
 // +++++++++++++create function add boxes to the counting-table
-
 // Add event listener to the "iAddTrDate" icon
 document.getElementById("iAddTrCount").addEventListener("click", function () {
   // Create a new (tr) element
+  //  create variabls
   var newTr = document.createElement("tr");
 
   // Create a new (th) & inputs
+  //  create variabls
   var thDescription = document.createElement("th");
   var inputDescriptionTop = document.createElement("input");
   var inputDescriptionBottom = document.createElement("input");
@@ -241,10 +260,11 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   var spanUnitaire = document.createElement("span");
 
   var thTotal = document.createElement("th");
-  var inputTotal = document.createElement("input");
+  var small = document.createElement("small");
   var spanTotal = document.createElement("span");
 
-  //  set attributes for the ( TH ) and thier ( input ) & (span)
+  //  set attributes for the (TH) and their (input) & (span)
+  // inputDescription
   thDescription.setAttribute("id", "leftThNew");
   inputDescriptionTop.setAttribute("placeholder", "TITRE PRESTATION");
   inputDescriptionTop.setAttribute("type", "text");
@@ -253,27 +273,31 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
 
   // inputQuantite
   inputQuantite.setAttribute("value", "1");
-  inputQuantite.setAttribute("type", "text");
+  inputQuantite.setAttribute("type", "number");
+  inputQuantite.setAttribute("id", "QuantiteNewInput");
+  inputQuantite.addEventListener("keyup", getNewTotal);
 
+  // inputUnitaire
   thUnitaire.setAttribute("id", "thPrixUntair");
   inputUnitaire.setAttribute("placeholder", "00.0");
-  inputUnitaire.setAttribute("type", "text");
+  inputUnitaire.setAttribute("type", "number");
+  inputUnitaire.setAttribute("id", "UnitaireNewInput");
+  inputUnitaire.addEventListener("keyup", getNewTotal);
   spanUnitaire.textContent = "€";
-
+// Tota
   thTotal.setAttribute("id", "thPrixTotal");
-  inputTotal.setAttribute("placeholder", "00.0");
-  inputTotal.setAttribute("type", "text");
+  small.setAttribute("id", "newTtotal");
   spanTotal.textContent = "€";
 
   // Create a new icon minus
   var newIcon = document.createElement("i");
-  // Assuming you have the appropriate CSS classes
   newIcon.setAttribute("class", "fa-solid fa-circle-minus");
+  // create func to remove the new (TR)
   newIcon.onclick = function () {
-    newTr.style.display = "none";
+    newTr.remove();
   };
 
-  //<<<<<Append the input to their th
+  // Append the inputs to their respective th
   thDescription.appendChild(inputDescriptionTop);
   thDescription.appendChild(inputDescriptionBottom);
 
@@ -282,33 +306,32 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   thUnitaire.appendChild(inputUnitaire);
   thUnitaire.appendChild(spanUnitaire);
 
-  thTotal.appendChild(inputTotal);
+  thTotal.appendChild(small);
   thTotal.appendChild(spanTotal);
   thTotal.appendChild(newIcon);
 
-  //<<<<<Append the (th) to their (tr)
+  // Append the th to the tr
   newTr.appendChild(thDescription);
   newTr.appendChild(thQuantite);
   newTr.appendChild(thUnitaire);
   newTr.appendChild(thTotal);
 
-  // Append the new tr to the table or tbody element
+  // Append the new tr to the table element
   var tableCounting = document.getElementById("tableCounting");
   tableCounting.appendChild(newTr);
+
+
+// create function to get new total 
+  function getNewTotal() {
+    if (inputQuantite !== "") {
+      var result = inputQuantite.value * inputUnitaire.value;
+      small.textContent = result.toFixed(2); // Display the result with two decimal places
+      small.style.background = "#77DD77";
+    }
+  }
 });
 
-//+++++++++ create counting function 
-  // add variables
-let Quantite = document.getElementById("Quantite");
-let unitaire = document.getElementById("unitaire");
-let total = document.getElementById("total");
-  // create function get total 
-function getTotal(){
-  if (unitaire.value != "") {
-    let result = Quantite.value * unitaire.value ;
-    total.innerHTML = result;
-    total.style.background = "#77DD77";
-}}
+
 //***************************************************** END : counting-table
 
 
