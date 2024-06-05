@@ -13,7 +13,9 @@
    <div class="container">
       <!-- start facture -->
       <div class="facture-section">
-          <h2 id="title">Facture N°1</h2>
+          <!-- <h2 id="title">Facture N°1</h2> -->
+           <!-- <input type="text" value="Facture N°1" id="title"> -->
+           <span id="title" contenteditable="true" ><h2 >Facture N°1</h2></span>
 
 
 
@@ -114,17 +116,17 @@
                 <tr id="bottomTr">
 
                     <th id="leftTh">
-                        <input type="text" placeholder="TITRE PRESTATION" value="teste stes">
+                        <input type="text" placeholder="TITRE PRESTATION" >
                         <input type="text" placeholder="Description prestation" >
                     </th>
                     <th>
                         <input id="Quantite"  onkeyup="getTotal()" value="1" placeholder="00,0" type="number" >
                     </th>
                     <th id="thPrixUntair">
-                        <input id="unitaire" onkeyup="getTotal()" type="number" placeholder="00,0" ><span> €</span>
+                        <input id="unitaire" onkeyup="getTotal()" type="number" placeholder="00,0"  ><span> €</span>
                     </th> 
                     <th id="thPrixTotal">
-                      <small  id="total"  >0,00</small><span> €</span>
+                      <small  id="total"  >0.00</small><span> €</span>
                         <i id="iconMinusCoun" class="fa-solid fa-circle-minus"></i>
                     </th>
 

@@ -1,21 +1,4 @@
-// **************** start  : Add the event to the title  start
-let title = document.getElementById("title");
-////onmouseover
-title.onmouseover = function () {
-  title.innerHTML = "Create Your Facture";
-  title.style.fontFamily = "serif";
-  title.style.fontSize = "20px";
-  title.style.background = "rgba(239, 191, 96, 0.7)";
-};
 
-///onmouseout
-title.onmouseout = function () {
-  title.innerHTML = "Facture N°1";
-  title.style.background = "rgba(102, 172, 236, 0.102)";
-  title.style.fontSize = "25px";
-  title.style.fontFamily = "sans-serif";
-};
-// *********************** END  : Add the event to the title  End
 
 //************** start  : remove element from company-info
 //   ---create variables
@@ -232,7 +215,11 @@ iconMinusCount.onclick = function () {
       let result = Quantite.value * unitaire.value ;
       total.innerHTML = result.toFixed(2);
       total.style.background = "#77DD77";
-  }}
+     }else{
+      total.innerHTML = "";
+     }
+
+}
 // *
 // *
 // *
@@ -287,7 +274,8 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
 // Tota
   thTotal.setAttribute("id", "thPrixTotal");
   small.setAttribute("id", "newTtotal");
-  spanTotal.textContent = "€";
+  small.innerHTML = "0.00";
+  spanTotal.textContent = " €";
 
   // Create a new icon minus
   var newIcon = document.createElement("i");
