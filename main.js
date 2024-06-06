@@ -1,6 +1,7 @@
 // ***************************************** START : create a function to add a logo
 
 let upload = document.getElementById("upload");
+let uploadDiv = document.getElementById("uploadDiv");
 let img = document.getElementById("img");
 
 // upload function
@@ -10,7 +11,10 @@ upload.onchange = function () {
 
   file.onload = function () {
     img.src = file.result;
+    uploadDiv.style.display = "none"
+
   };
+
 };
 // ***************************************** END : create a function to add a logo
 
