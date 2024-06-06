@@ -1,6 +1,20 @@
+// ***************************************** START : create a function to add a logo
 
+let upload = document.getElementById("upload");
+let img = document.getElementById("img");
 
-//************** start  : remove element from company-info
+// upload function
+upload.onchange = function () {
+  let file = new FileReader();
+  file.readAsDataURL(upload.files[0]);
+
+  file.onload = function () {
+    img.src = file.result;
+  };
+};
+// ***************************************** END : create a function to add a logo
+
+//************************************* start  : remove element from company-info
 //   ---create variables
 let spanSiret = document.getElementById("spanSiret");
 let iSiret = document.getElementById("iSiret");
@@ -20,9 +34,9 @@ iTVA.onclick = function () {
 iTel.onclick = function () {
   spanTel.style.display = "none";
 };
-//******************* End  : remove element from company-info
+//*********************************** End  : remove element from company-info
 
-//******************* start  : Add an event to the plus icon  company-info
+//******************************** start  : Add an event to the plus icon  company-info
 // Add event listener to the "iAddspan" icon
 document.getElementById("iAddspan").addEventListener("click", function () {
   // Create a new span element
@@ -55,9 +69,9 @@ document.getElementById("iAddspan").addEventListener("click", function () {
   var addSpan = document.getElementById("addSpan");
   addSpan.appendChild(newSpan);
 });
-//********************** END  : Add an event to the plus icon  company-info
+//*********************************** END  : Add an event to the plus icon  company-info
 
-//*******************************start  : remove element from Client-info
+//******************************************start  : remove element from Client-info
 
 let spanSiretClient = document.getElementById("spanSiretClient");
 let iSiretClient = document.getElementById("iSiretClient");
@@ -77,9 +91,9 @@ iTVA.onclick = function () {
 iTélClient.onclick = function () {
   spanTélClient.style.display = "none";
 };
-//****************** */ end  : remove element from Client-info
+//************************************** */ end  : remove element from Client-info
 
-//******************* start  : Add an event to the plus icon  Client-info
+//******************************** start  : Add an event to the plus icon  Client-info
 
 // Add event listener to the "iAddspan" icon
 document
@@ -117,9 +131,9 @@ document
     addSpan.appendChild(newSpan);
   });
 
-//******************* END  : Add an event to the plus icon  Client-info
+//*********************************** END  : Add an event to the plus icon  Client-info
 
-//***************************************************** start : the dates
+//******************************************************** start : the dates
 //  create variabls
 var trDateFacture = document.getElementById("trDateFacture");
 var iconMinusFacture = document.getElementById("iconMinusFacture");
@@ -204,24 +218,21 @@ var iconMinusCount = document.getElementById("iconMinusCoun");
 iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
-//+++++++++ create counting function 
-  // add variables
-  let Quantite = document.getElementById("Quantite");
-  let unitaire = document.getElementById("unitaire");
-  let total = document.getElementById("total");
-    // create function get total 
-  function getTotal(){
-    if (unitaire.value != "") {
-      let result = Quantite.value * unitaire.value ;
-      total.innerHTML = result.toFixed(2);
-      total.style.background = "#77DD77";
-     }else{
-      total.innerHTML = "";
-     }
-
+//+++++++++ create counting function
+// add variables
+let Quantite = document.getElementById("Quantite");
+let unitaire = document.getElementById("unitaire");
+let total = document.getElementById("total");
+// create function get total
+function getTotal() {
+  if (unitaire.value != "") {
+    let result = Quantite.value * unitaire.value;
+    total.innerHTML = result.toFixed(2);
+    total.style.background = "#77DD77";
+  } else {
+    total.innerHTML = "";
+  }
 }
-// *
-// *
 // *
 // *
 // *
@@ -271,7 +282,7 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   inputUnitaire.setAttribute("id", "UnitaireNewInput");
   inputUnitaire.addEventListener("keyup", getNewTotal);
   spanUnitaire.textContent = "€";
-// Tota
+  // Tota
   thTotal.setAttribute("id", "thPrixTotal");
   small.setAttribute("id", "newTtotal");
   small.innerHTML = "0.00";
@@ -308,8 +319,7 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   var tableCounting = document.getElementById("tableCounting");
   tableCounting.appendChild(newTr);
 
-
-// create function to get new total 
+  // create function to get new total
   function getNewTotal() {
     if (inputQuantite !== "") {
       var result = inputQuantite.value * inputUnitaire.value;
@@ -319,30 +329,6 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   }
 });
 
-
 //***************************************************** END : counting-table
-
-
-
-
-
-
-
-
-
-let upload = document.getElementById("upload");
-let img = document.getElementById("img");
-
-// upload function
-upload.onchange = function () {
-
-  let file = new FileReader();
-  file.readAsDataURL(upload.files[0]);
-
-  file.onload = function () {
-    img.src = file.result;
-  };
-  
-};
 
 

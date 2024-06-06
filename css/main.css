@@ -8,10 +8,12 @@
   display: flex;
   justify-content: center;
 align-items: center;
-  background: #961d1d;
+  background: #fff;
 }
 .facture-section{
     width: 65%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #ffffffe1;
     border: 1px solid #eee;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);}
@@ -41,9 +43,7 @@ i{
     max-width: 10vw;
     max-height: 10vh;
   }
-  .img .upload{
 
-  } 
 
  .upload label {
     color: #32c518;
@@ -58,13 +58,12 @@ i{
     max-height: 30px;
      margin-top: 15px;
     margin-right: 15px;
-    float: right;
     font-size: 1.1rem;
     display: inline-block;
     padding: 3px 2px;
     outline: none;
     cursor: text;
-    background-color: rgba(65, 23, 217, 0.102);
+    background-color: rgba(102, 172, 236, 0.102) ;
 }
 
 /* -------------------------------------------------company-info */
