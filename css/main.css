@@ -19,8 +19,11 @@ align-items: center;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);}
 
 i{
-    color: rgb(242, 164, 9);
+    color: rgb(242, 164,9 );
     cursor: pointer;
+    font-size: large;
+    background: black;
+    border-radius: 50%;
 }
 
 /* ------------------------------------------------title & logo */
