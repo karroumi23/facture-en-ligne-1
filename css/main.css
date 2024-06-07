@@ -22,10 +22,12 @@ i{
     color: rgb(242, 164,9 );
     cursor: pointer;
     font-size: large;
-    background: black;
+    background: rgb(103, 90, 90);
     border-radius: 50%;
 }
-
+i:hover{
+    font-size: larger;
+}
 /* ------------------------------------------------title & logo */
 .title-logo{
     width: 100%;
