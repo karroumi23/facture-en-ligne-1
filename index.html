@@ -131,10 +131,10 @@
                         <input type="text" placeholder="Description prestation" >
                     </th>
                     <th>
-                        <input id="Quantite"  onkeyup="getTotal()" value="1" placeholder="00,0" type="number" >
+                        <input id="Quantite"  onkeyup="getTotal()" onchange="getTotal()" value="1" placeholder="00,0" type="number" >
                     </th>
                     <th id="thPrixUntair">
-                        <input id="unitaire" onkeyup="getTotal()" type="number" placeholder="00,0"  ><span> €</span>
+                        <input id="unitaire" onkeyup="getTotal()" onchange="getTotal()" type="number" placeholder="00,0"  ><span> €</span>
                     </th> 
                     <th id="thPrixTotal">
                       <small  id="total"  >0.00</small><span> €</span>

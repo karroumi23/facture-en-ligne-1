@@ -278,6 +278,7 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   inputQuantite.setAttribute("type", "number");
   inputQuantite.setAttribute("id", "QuantiteNewInput");
   inputQuantite.addEventListener("keyup", getNewTotal);
+  inputQuantite.addEventListener("change", getNewTotal);
 
   // inputUnitaire
   thUnitaire.setAttribute("id", "thPrixUntair");
@@ -285,6 +286,7 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   inputUnitaire.setAttribute("type", "number");
   inputUnitaire.setAttribute("id", "UnitaireNewInput");
   inputUnitaire.addEventListener("keyup", getNewTotal);
+  inputUnitaire.addEventListener("change", getNewTotal);
   spanUnitaire.textContent = "€";
   // Tota
   thTotal.setAttribute("id", "thPrixTotal");
