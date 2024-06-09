@@ -232,7 +232,7 @@ input[type="text"]{
     color: #000000;
     font-family: serif;
     font-weight: 600;
-    font-size:medium;
+    font-size:medium;     
 }
 .date-table .newThRight i{
     position: absolute;
@@ -342,6 +342,4 @@ input[type="number"] {
 .devis-table th{
     border: 1px solid #b0adad;
 }
-
-
 

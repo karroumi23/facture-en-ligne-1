@@ -135,9 +135,35 @@ document
     addSpan.appendChild(newSpan);
   });
 
-//*********************************** END  : Add an event to the plus icon  Client-info
+//******************************** END  : Add an event to the plus icon  Client-info
 
 //******************************************************** start : the dates
+// ++++++++++++add ( datelocal ) to the inputs 
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the current date and time
+  var today = new Date();
+
+  // Format the date to YYYY-MM-DD
+  var day = String(today.getDate()).padStart(2, '0');
+  var month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  var year = today.getFullYear();
+  var hours = String(today.getHours()).padStart(2, '0');
+  var minutes = String(today.getMinutes()).padStart(2, '0');
+
+  var currentDate = year + '-' + month + '-' + day;
+  var currentDateTime = currentDate + 'T' + hours + ':' + minutes;
+
+  // Set the date input value
+  var dateFacture = document.getElementById("dateFacture");
+  var dateLivraison = document.getElementById("dateLivraison");
+  var datePaiement = document.getElementById("datePaiement");
+
+  dateFacture.value = currentDate;
+  dateLivraison.value = currentDateTime;
+  datePaiement.value = currentDateTime;
+});
+
+/////////////////////////////////////
 //  create variabls
 var trDateFacture = document.getElementById("trDateFacture");
 var iconMinusFacture = document.getElementById("iconMinusFacture");
