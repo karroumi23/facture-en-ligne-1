@@ -344,6 +344,19 @@ input[type="number"] {
     width:100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+ }
+ .input-devis{
+    width: 35.66667%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: rgba(102, 172, 236, 0.102);
+    color: #000000;
+    font-family: serif;
+    font-weight: 400;
+    font-size: medium;
+    text-align: center;
  }
 
 .devis-table{
@@ -374,8 +387,6 @@ input[type="number"] {
 }
 #trTtc th small{
     font-weight: 700;
-    font-weight: 700;
-
     font-size: large;
 }
 
