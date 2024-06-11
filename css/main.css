@@ -338,8 +338,42 @@ input[type="number"] {
 
 /*********END*******new boxes  */
 
+/*---------------------------------------- devis-table    */
+ .devis-section{
+    /* background-color: gray; */
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+ }
+
+.devis-table{
+    width: 50%;
+    margin-right: 45px;
+}
 
 .devis-table th{
     border: 1px solid #b0adad;
+    line-height:2.5;
+    font-size: larger;
+    
+}
+.devis-table  .first-child{
+    background-color: #E7E6E6;
+}
+.devis-table span{
+    font-family:  serif;
+    font-weight: 500;
+}
+.devis-table small{
+    font-family:  serif;
+    font-weight: 500;
+}
+#trTtc th span{
+    font-weight: 800;
+    font-size: large;
+}
+#trTtc th small{
+    font-weight: 700;
+    font-size: large;
 }
 
