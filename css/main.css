@@ -340,10 +340,25 @@ input[type="number"] {
 
 /*---------------------------------------- devis-table    */
  .devis-section{
-    /* background-color: gray; */
     width:100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+ }
+ .devis-section .input-devis{
+    height: 50px;
+    width: 35%;
+    margin-left: 10px;
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: text;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    font-weight: 500;
+    font-size: larger;
+    background-color: rgba(102, 172, 236, .102);
  }
 
 .devis-table{
@@ -377,9 +392,6 @@ input[type="number"] {
     font-size: large;
 }
 
-/* .devis-table .ttc-span{
-    font-weight: 900;
-} */
 
 
 
