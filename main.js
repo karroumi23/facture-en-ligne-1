@@ -262,9 +262,12 @@ function getTotal() {
   if (unitaire.value != "") {
     let result = Quantite.value * unitaire.value;
     total.innerHTML = result.toFixed(2);
+    total.style.background = "#77DD77";
     // display the Prix Total HT value in Total HT(devis)
     htTtotal.innerHTML = result.toFixed(2);
-    total.style.background = "#77DD77";
+    // calculate percentage TVA (devis)
+    let pourcentage =  result * 0.2;
+    tvaTtotal.innerHTML = pourcentage.toFixed(2);;
   } else {
     total.innerHTML = "";
   }
