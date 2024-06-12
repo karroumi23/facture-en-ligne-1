@@ -249,15 +249,21 @@ iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
 //+++++++++ create counting function
-// add variables
+// add variables counting-table
 let Quantite = document.getElementById("Quantite");
 let unitaire = document.getElementById("unitaire");
 let total = document.getElementById("total");
+// add variables devis-table
+     let htTtotal = document.getElementById("ht");
+     let tvaTtotal = document.getElementById("tva");
+     let ttcTtotal = document.getElementById("ttc")  
 // create function get total
 function getTotal() {
   if (unitaire.value != "") {
     let result = Quantite.value * unitaire.value;
     total.innerHTML = result.toFixed(2);
+    // display the Prix Total HT value in Total HT(devis)
+    htTtotal.innerHTML = result.toFixed(2);
     total.style.background = "#77DD77";
   } else {
     total.innerHTML = "";
@@ -265,6 +271,10 @@ function getTotal() {
 }
 // *
 // *
+;
+        
+
+     
 // *
 // *
 // +++++++++++++create function add boxes to the counting-table
