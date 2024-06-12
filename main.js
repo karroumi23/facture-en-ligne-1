@@ -11,10 +11,8 @@ upload.onchange = function () {
 
   file.onload = function () {
     img.src = file.result;
-    uploadDiv.style.display = "none"
-
+    uploadDiv.style.display = "none";
   };
-
 };
 // ***************************************** END : create a function to add a logo
 
@@ -138,20 +136,20 @@ document
 //******************************** END  : Add an event to the plus icon  Client-info
 
 //******************************************************** start : the dates
-// ++++++++++++add ( datelocal ) to the inputs 
+// ++++++++++++add ( datelocal ) to the inputs
 document.addEventListener("DOMContentLoaded", function () {
   // Get the current date and time
   var today = new Date();
 
   // Format the date to YYYY-MM-DD
-  var day = String(today.getDate()).padStart(2, '0');
-  var month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  var day = String(today.getDate()).padStart(2, "0");
+  var month = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
   var year = today.getFullYear();
-  var hours = String(today.getHours()).padStart(2, '0');
-  var minutes = String(today.getMinutes()).padStart(2, '0');
+  var hours = String(today.getHours()).padStart(2, "0");
+  var minutes = String(today.getMinutes()).padStart(2, "0");
 
-  var currentDate = year + '-' + month + '-' + day;
-  var currentDateTime = currentDate + 'T' + hours + ':' + minutes;
+  var currentDate = year + "-" + month + "-" + day;
+  var currentDateTime = currentDate + "T" + hours + ":" + minutes;
 
   // Set the date input value
   var dateFacture = document.getElementById("dateFacture");
@@ -254,9 +252,9 @@ let Quantite = document.getElementById("Quantite");
 let unitaire = document.getElementById("unitaire");
 let total = document.getElementById("total");
 // add variables devis-table
-     let htTtotal = document.getElementById("ht");
-     let tvaTtotal = document.getElementById("tva");
-     let ttcTtotal = document.getElementById("ttc")  
+let htTtotal = document.getElementById("ht");
+let tvaTtotal = document.getElementById("tva");
+let ttcTtotal = document.getElementById("ttc");
 // create function get total
 function getTotal() {
   if (unitaire.value != "") {
@@ -266,18 +264,17 @@ function getTotal() {
     // display the Prix Total HT value in Total HT(devis)
     htTtotal.innerHTML = result.toFixed(2);
     // calculate percentage TVA (devis)
-    let pourcentage =  result * 0.2;
-    tvaTtotal.innerHTML = pourcentage.toFixed(2);;
+    let pourcentage = result * 0.2;
+    tvaTtotal.innerHTML = pourcentage.toFixed(2);
+    // calculate  total TTC (devis)
+    ttcTtotal.innerHTML = (result + pourcentage).toFixed(2);
+    ttcTtotal.style.background = "#77DD77";
   } else {
     total.innerHTML = "";
   }
 }
 // *
 // *
-;
-        
-
-     
 // *
 // *
 // +++++++++++++create function add boxes to the counting-table
@@ -375,5 +372,3 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
 });
 
 //***************************************************** END : counting-table
-
-
