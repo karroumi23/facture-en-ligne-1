@@ -374,14 +374,24 @@ input[type="number"] {
 }
 .devis-table  .first-child{
     background-color: #E7E6E6;
+    width:50%;
+
 }
 .devis-table span{
     font-family:  serif;
     font-weight: 500;
 }
-.devis-table small{
-    font-family:  serif;
-    font-weight: 500;
+.devis-table th input{
+    background: aqua;
+   width: 50%;
+    border: none;
+    outline: none;
+    background: rgba(102, 172, 236, 0.102);
+    color: #000000;
+    font-family: serif;
+    font-weight: 600;
+    font-size: medium;
+    text-align: center;
 }
 #trTtc th span{
     font-weight: 800;
