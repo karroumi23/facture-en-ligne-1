@@ -159,15 +159,15 @@
                               
                  <tr id="trTotalHt" >
                    <th class="first-child"><span >Total HT	</span></th>
-                   <th ><small  id="ht" onkeyup="getTotal()" >0,00</small><span> €</span> </th>                        
+                   <th ><input type="number"  id="ht" value="0.00" readonly onkeyup="getTotal()"> <span> €</span> </th>                        
                  </tr>
                  <tr id="trTva" >
                   <th class="first-child"><span >TVA (20,00 %)		</span></th>
-                  <th ><small  id="tva" onkeyup="getTotal()" >0,00</small> <span> €</span></th>                         
-                </tr>
+                  <th ><input id="tva" value="0.00" readonly onkeyup="getTotal()"> <span> €</span></th>                         
+                </tr> 
                 <tr id="trTtc" >
                   <th class="first-child"><span class="ttc-span" >Total TTC	</span></th>
-                  <th ><small  id="ttc" class="ttc-span" >0,00</small> <span class="ttc-span"> €</span> </th>
+                  <th ><input id="ttc" value="0.00" class="ttc-span" readonly  ><span class="ttc-span"> €</span> </th>
                 </tr>                       
 
                </table>

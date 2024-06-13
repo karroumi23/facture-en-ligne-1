@@ -262,12 +262,12 @@ function getTotal() {
     total.innerHTML = result.toFixed(2);
     total.style.background = "#77DD77";
     // display the Prix Total HT value in Total HT(devis)
-    htTtotal.innerHTML = result.toFixed(2);
+    htTtotal.value = result.toFixed(2);
     // calculate percentage TVA (devis)
     let pourcentage = result * 0.2;
-    tvaTtotal.innerHTML = pourcentage.toFixed(2);
+    tvaTtotal.value = pourcentage.toFixed(2);
     // calculate  total TTC (devis)
-    ttcTtotal.innerHTML = (result + pourcentage).toFixed(2);
+    ttcTtotal.value = (result + pourcentage).toFixed(2);
     ttcTtotal.style.background = "#77DD77";
   } else {
     total.innerHTML = "";
@@ -363,12 +363,18 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
 
   // create function to get new total
   function getNewTotal() {
+    // Check if the input quantity is not empty
     if (inputQuantite !== "") {
-      var result = inputQuantite.value * inputUnitaire.value;
-      small.textContent = result.toFixed(2); // Display the result with two decimal places
+      var Nresult = inputQuantite.value * inputUnitaire.value;
+      small.textContent = Nresult.toFixed(2); // Display the result with two decimal places
       small.style.background = "#77DD77";
+        
+        // Update the total value in the htTtotal input element
+        let currentHtTotal = parseFloat(htTtotal.value) ; 
+        htTtotal.value = (currentHtTotal + Nresult).toFixed(2);
     }
-  }
+}
+
 });
 
 //***************************************************** END : counting-table
