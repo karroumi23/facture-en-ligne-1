@@ -238,20 +238,21 @@ document.getElementById("iAddTrDate").addEventListener("click", function () {
 //****************************************************** END : the dates
 
 //***************************************************** start : counting-table
+// create function  removing ( tr )
 //  create variabls
 var bottomTr = document.getElementById("bottomTr");
 var iconMinusCount = document.getElementById("iconMinusCoun");
-
-// create function  removing ( tr )
 iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
+
 //+++++++++ create counting function
 // add variables counting-table
 function getTotal() {
   let Quantite = document.getElementById("Quantite").value;
   let unitaire = document.getElementById("unitaire").value;
   let total = document.getElementById("total");
+  // add variables DEVIS-table
   let htTtotal = document.getElementById("ht");
   let tvaTtotal = document.getElementById("tva");
   let ttcTtotal = document.getElementById("ttc");
@@ -266,7 +267,7 @@ function getTotal() {
     ttcTtotal.value = (result + pourcentage).toFixed(2);
     ttcTtotal.style.background = "#77DD77";
   } else {
-    total.innerHTML = "0.00";
+    total.innerHTML = "";
   }
 }
 // *
@@ -333,7 +334,7 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   newIcon.onclick = function () {
     newTr.remove();
     updateTotals();
-
+    
   };
 
   // Append the inputs to their respective th
@@ -410,4 +411,4 @@ function updateTotals() {
   ttcTtotal.value = ttcTotal.toFixed(2);
 }
 
-//***************************************************** END : counting-table
+//************************************************************************** END : counting-table
