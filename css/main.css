@@ -157,7 +157,11 @@ input[type="text"]{
 /*--------------------------------------- the dates  */
 .box-date{
  width:100%;
- overflow: scroll;
+}
+@media (max-width:346px){
+    .box-date{
+        overflow: scroll;
+       }
 }
   table {
         border-collapse: collapse;
@@ -251,7 +255,11 @@ input[type="text"]{
     width: 100%;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+}
+@media(max-width:480px){
+    .box-counting-table{
+         overflow: scroll;
+    }
 }
 
 .counting-table {
