@@ -7,7 +7,7 @@
   width:100%;
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
   background: #fff;
 }
 .facture-section{
@@ -16,6 +16,7 @@ align-items: center;
     margin-bottom: 20px;
     background-color: #ffffffe1;
     border: 1px solid #eee;
+    padding-right: 5%;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);}
 
 i{
@@ -154,6 +155,10 @@ input[type="text"]{
 }
 
 /*--------------------------------------- the dates  */
+.box-date{
+ width:100%;
+ overflow: scroll;
+}
   table {
         border-collapse: collapse;
         width: calc(50% - 1px);
@@ -232,7 +237,7 @@ input[type="text"]{
     color: #000000;
     font-family: serif;
     font-weight: 600;
-    font-size:medium;
+    font-size:medium;     
 }
 .date-table .newThRight i{
     position: absolute;
@@ -246,6 +251,7 @@ input[type="text"]{
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 
 .counting-table {
@@ -340,12 +346,12 @@ input[type="number"] {
 
 /*---------------------------------------- devis-table    */
  .devis-section{
-    /* background-color: gray; */
     width:100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
  }
+
  .input-devis{
     width: 35.66667%;
     height: 50px;
@@ -356,7 +362,23 @@ input[type="number"] {
     font-family: serif;
     font-weight: 400;
     font-size: medium;
+    text-align: center;}
+
+ .devis-section .input-devis{
+    height: 50px;
+    width: 35%;
+    margin-left: 5%;
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: text;
+    padding: 10px;
+    display: flex;
     text-align: center;
+    font-weight: 500;
+    font-size: larger;
+    background-color: rgba(102, 172, 236, .102);
+
  }
 
 .devis-table{
@@ -372,14 +394,24 @@ input[type="number"] {
 }
 .devis-table  .first-child{
     background-color: #E7E6E6;
+    width:50%;
+
 }
 .devis-table span{
     font-family:  serif;
     font-weight: 500;
 }
-.devis-table small{
-    font-family:  serif;
-    font-weight: 500;
+.devis-table th input{
+    background: aqua;
+   width: 50%;
+    border: none;
+    outline: none;
+    background: rgba(102, 172, 236, 0.102);
+    color: #000000;
+    font-family: serif;
+    font-weight: 600;
+    font-size: medium;
+    text-align: center;
 }
 #trTtc th span{
     font-weight: 800;

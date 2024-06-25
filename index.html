@@ -101,7 +101,7 @@
                  </tr>
                  <tr id="trDatePaiement">
                     <th class="first-child"><span >Echéance de paiement</span></th>
-                    <th class="second-child"><input type="datetime-local" id="echéancePaiement" class="date" />
+                    <th class="second-child"><input type="datetime-local" id="datePaiement" class="datePaiement" />
                      <i  id="iconMinusPaiement" class="fa-solid fa-circle-minus"></i></th>
                  </tr>
                  
@@ -131,10 +131,10 @@
                         <input type="text" placeholder="Description prestation" >
                     </th>
                     <th>
-                        <input id="Quantite"  onkeyup="getTotal()" onchange="getTotal()" value="1" placeholder="00,0" type="number" >
+                        <input id="Quantite"  onkeyup="updateTotals()" onchange="updateTotals()" value="1" placeholder="00,0" type="number" >
                     </th>
                     <th id="thPrixUntair">
-                        <input id="unitaire" onkeyup="getTotal()" onchange="getTotal()" type="number" placeholder="00,0"  ><span> €</span>
+                        <input id="unitaire" onkeyup="updateTotals()" onchange="updateTotals()" type="number" placeholder="00,0"  ><span> €</span>
                     </th> 
                     <th id="thPrixTotal">
                       <small  id="total"  >0.00</small><span> €</span>
@@ -153,29 +153,26 @@
 
           <!---------------- Devis-table => start -->
            <div class="devis-section">
+<<<<<<< HEAD
              <input  class="input-devis" placeholder="Informations complémentaires (IBAN ,BIC...)">
+=======
+            <input class="input-devis" contenteditable="true" placeholder="informations complémentaires ">
+
+>>>>>>> 5c190223ccb23d2b93cf5d6779a9e3c5a498d19a
               <table  class="devis-table">
-                
+                              
                  <tr id="trTotalHt" >
                    <th class="first-child"><span >Total HT	</span></th>
-                   <th ><small  id="total"  >0,00</small><span> €</span> </th>
-                                            
-                         
-                 </tr> 
+                   <th ><input type="number"  id="ht" value="0.00" readonly onkeyup="getTotal()"> <span> €</span> </th>                        
+                 </tr>
                  <tr id="trTva" >
                   <th class="first-child"><span >TVA (20,00 %)		</span></th>
-                  <th ><small  id="total"  >0,00</small> <span> €</span></th>
-                                          
-                          
-                </tr>
+                  <th ><input id="tva" value="0.00" readonly onkeyup="getTotal()"> <span> €</span></th>                         
+                </tr> 
                 <tr id="trTtc" >
                   <th class="first-child"><span class="ttc-span" >Total TTC	</span></th>
-                  <th ><small  id="total" class="ttc-span" >0,00</small> <span class="ttc-span"> €</span> </th>
-                                          
-                        
-                </tr>
-                 
-
+                  <th ><input id="ttc" value="0.00" class="ttc-span" readonly  ><span class="ttc-span"> €</span> </th>
+                </tr>                       
 
                </table>
 

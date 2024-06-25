@@ -11,10 +11,8 @@ upload.onchange = function () {
 
   file.onload = function () {
     img.src = file.result;
-    uploadDiv.style.display = "none"
-
+    uploadDiv.style.display = "none";
   };
-
 };
 // ***************************************** END : create a function to add a logo
 
@@ -135,9 +133,35 @@ document
     addSpan.appendChild(newSpan);
   });
 
-//*********************************** END  : Add an event to the plus icon  Client-info
+//******************************** END  : Add an event to the plus icon  Client-info
 
 //******************************************************** start : the dates
+// ++++++++++++add ( datelocal ) to the inputs
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the current date and time
+  var today = new Date();
+
+  // Format the date to YYYY-MM-DD
+  var day = String(today.getDate()).padStart(2, "0");
+  var month = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
+  var year = today.getFullYear();
+  var hours = String(today.getHours()).padStart(2, "0");
+  var minutes = String(today.getMinutes()).padStart(2, "0");
+
+  var currentDate = year + "-" + month + "-" + day;
+  var currentDateTime = currentDate + "T" + hours + ":" + minutes;
+
+  // Set the date input value
+  var dateFacture = document.getElementById("dateFacture");
+  var dateLivraison = document.getElementById("dateLivraison");
+  var datePaiement = document.getElementById("datePaiement");
+
+  dateFacture.value = currentDate;
+  dateLivraison.value = currentDateTime;
+  datePaiement.value = currentDateTime;
+});
+
+/////////////////////////////////////
 //  create variabls
 var trDateFacture = document.getElementById("trDateFacture");
 var iconMinusFacture = document.getElementById("iconMinusFacture");
@@ -214,25 +238,34 @@ document.getElementById("iAddTrDate").addEventListener("click", function () {
 //****************************************************** END : the dates
 
 //***************************************************** start : counting-table
+// create function  removing ( tr )
 //  create variabls
 var bottomTr = document.getElementById("bottomTr");
 var iconMinusCount = document.getElementById("iconMinusCoun");
-
-// create function  removing ( tr )
 iconMinusCount.onclick = function () {
   bottomTr.style.display = "none";
 };
+
 //+++++++++ create counting function
-// add variables
-let Quantite = document.getElementById("Quantite");
-let unitaire = document.getElementById("unitaire");
-let total = document.getElementById("total");
-// create function get total
+// add variables counting-table
 function getTotal() {
-  if (unitaire.value != "") {
-    let result = Quantite.value * unitaire.value;
+  let Quantite = document.getElementById("Quantite").value;
+  let unitaire = document.getElementById("unitaire").value;
+  let total = document.getElementById("total");
+  // add variables DEVIS-table
+  let htTtotal = document.getElementById("ht");
+  let tvaTtotal = document.getElementById("tva");
+  let ttcTtotal = document.getElementById("ttc");
+
+  if (Quantite && unitaire) {
+    let result = Quantite * unitaire;
     total.innerHTML = result.toFixed(2);
     total.style.background = "#77DD77";
+    htTtotal.value = result.toFixed(2);
+    let pourcentage = result * 0.2;
+    tvaTtotal.value = pourcentage.toFixed(2);
+    ttcTtotal.value = (result + pourcentage).toFixed(2);
+    ttcTtotal.style.background = "#77DD77";
   } else {
     total.innerHTML = "";
   }
@@ -277,16 +310,16 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   inputQuantite.setAttribute("value", "1");
   inputQuantite.setAttribute("type", "number");
   inputQuantite.setAttribute("id", "QuantiteNewInput");
-  inputQuantite.addEventListener("keyup", getNewTotal);
-  inputQuantite.addEventListener("change", getNewTotal);
+  inputQuantite.addEventListener("keyup", updateTotals);
+  inputQuantite.addEventListener("change", updateTotals);
 
   // inputUnitaire
   thUnitaire.setAttribute("id", "thPrixUntair");
   inputUnitaire.setAttribute("placeholder", "00.0");
   inputUnitaire.setAttribute("type", "number");
   inputUnitaire.setAttribute("id", "UnitaireNewInput");
-  inputUnitaire.addEventListener("keyup", getNewTotal);
-  inputUnitaire.addEventListener("change", getNewTotal);
+  inputUnitaire.addEventListener("keyup", updateTotals);
+  inputUnitaire.addEventListener("change", updateTotals);
   spanUnitaire.textContent = "€";
   // Tota
   thTotal.setAttribute("id", "thPrixTotal");
@@ -300,6 +333,8 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   // create func to remove the new (TR)
   newIcon.onclick = function () {
     newTr.remove();
+    updateTotals();
+    
   };
 
   // Append the inputs to their respective th
@@ -325,16 +360,55 @@ document.getElementById("iAddTrCount").addEventListener("click", function () {
   var tableCounting = document.getElementById("tableCounting");
   tableCounting.appendChild(newTr);
 
+  updateTotals();
+
+
   // create function to get new total
-  function getNewTotal() {
-    if (inputQuantite !== "") {
-      var result = inputQuantite.value * inputUnitaire.value;
-      small.textContent = result.toFixed(2); // Display the result with two decimal places
-      small.style.background = "#77DD77";
-    }
-  }
+//   function getNewTotal() {
+//     // Check if the input quantity is not empty
+//     if (inputQuantite !== "") {
+//       var Nresult = inputQuantite.value * inputUnitaire.value;
+//       small.textContent = Nresult.toFixed(2); // Display the result with two decimal places
+//       small.style.background = "#77DD77";
+        
+//         // Update the total value in the htTtotal input element
+//         let currentHtTotal = parseFloat(htTtotal.value) ; 
+//         htTtotal.value = (currentHtTotal + Nresult).toFixed(2);
+//     }
+// }
+
 });
 
-//***************************************************** END : counting-table
+function updateTotals() {
+  let htTotal = 0;
+  let tvaTotal = 0;
+  let ttcTotal = 0;
 
+  let rows = document.querySelectorAll("#tableCounting tr");
 
+  rows.forEach(row => {
+    let quantite = row.querySelector("#QuantiteNewInput") || row.querySelector("#Quantite");
+    let unitaire = row.querySelector("#UnitaireNewInput") || row.querySelector("#unitaire");
+    let total = row.querySelector("#newTtotal") || row.querySelector("#total");
+
+    if (quantite && unitaire && total) {
+      let qty = parseFloat(quantite.value) || 0;
+      let unitPrice = parseFloat(unitaire.value) || 0;
+      let rowTotal = qty * unitPrice;
+      total.textContent = rowTotal.toFixed(2);
+      htTotal += rowTotal;
+    }
+  });
+
+  let htTtotal = document.getElementById("ht");
+  let tvaTtotal = document.getElementById("tva");
+  let ttcTtotal = document.getElementById("ttc");
+
+  htTtotal.value = htTotal.toFixed(2);
+  tvaTotal = htTotal * 0.2;
+  tvaTtotal.value = tvaTotal.toFixed(2);
+  ttcTotal = htTotal + tvaTotal;
+  ttcTtotal.value = ttcTotal.toFixed(2);
+}
+
+//************************************************************************** END : counting-table
