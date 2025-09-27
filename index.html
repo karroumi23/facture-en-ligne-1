@@ -10,180 +10,158 @@
 </head>
 <body>
 
-   <div class="container">
-      <!-- start facture -->
-      <div class="facture-section">
-
-        <div class="title-logo">
-          <div class="img">
-            <div class="img-box">
-              <img id="img"  />
-            </div>
-            <div id="uploadDiv" class="upload">
-              <!-- for hidin input under lable ( name ID input like for = label)  -->
-              <label for="upload">Add Your Logo</label>
-              <input type="file" id="upload" />
-            </div>
-          </div>
-          <span id="title" contenteditable="true" ><h2 >Facture N°1</h2></span>
-         
-        </div>
-
-
-          <!---------------- company-info start -->
-          <div class="company-information" id="companyInfo">
-            <input type="text" placeholder="Votre nom / société"><br>
-            <input type="text" placeholder="Adresse"><br>
-            <input type="text" placeholder="Code postal Ville"><br>
-            <span id="spanSiret">
-               <h4>Siret :</h4>
-               <input type="text" placeholder="000 000 000">
-               <i id="iSiret" class="fa-solid fa-circle-minus"></i>
-            </span>
-            <span id="spanTVA">
-               <h4>N° TVA :</h4>
-               <input type="text" placeholder="FR6543546843">
-               <i id="iTVA" class="fa-solid fa-circle-minus"></i>
-            </span>
-            <span id="spanTel">
-               <h4>Tél :</h4>
-               <input type="text" placeholder="+2125........">
-               <i id="iTel" class="fa-solid fa-circle-minus"></i>
-            </span>
-            <span id="addSpan" >
-            </span>
-            <i id="iAddspan" class="fa-solid fa-circle-plus"></i>
-            
-          </div>
-          <!---------------- company-info end -->
   
-  
-          <!---------------- client-info start -->
-          <div class="client-information">
-            <div class="box-client-info">
-               <input type="text" placeholder="Nom client">
-               <input type="text" placeholder="Adresse">
-               <input type="text" placeholder="Code postal Ville">
-               <span id="spanSiretClient">
-                 <h4>Siret :</h4>
-                 <input type="text" placeholder="*** *** ***">
-                 <i id="iSiretClient" class="fa-solid fa-circle-minus"></i>
-               </span>
-  
-               <span id="spanTélClient">
-                 <h4>Tél :</h4>
-                 <input type="text" placeholder="+2126........">
-                 <i id="iTélClient" class="fa-solid fa-circle-minus"></i>
-               </span>
-               <span class="plus-client" id="addSpanClient" >
-               </span>
-                  <i id="iAddspanClient" class="fa-solid fa-circle-plus"></i>
-              
-            </div>
-          
-          </div>
-          <!---------------- company-info end -->
-  
-  
-  
-          <!---------------- the dates start -->
-           <div class="box-date">
-              <table id="tableBody" class="date-table">
-                 <tr id="trDateFacture" >
-                   <th class="first-child"><span >Date de facture</span></th>
-                   <th class="second-child"><input type="date" id="dateFacture" class="date-facture" />
-                           <i id="iconMinusFacture" class="fa-solid fa-circle-minus"  ></i></th>
-                 </tr>
-                 <tr id="trDateLivraison">
-                    <th class="first-child"><span >Date de livraison</span></th>
-                    <th class="second-child"><input type="datetime-local" id="dateLivraison" class="dateLivraison" />
-                           <i id="iconMinusLivraison" class="fa-solid fa-circle-minus"></i></th>
-                 </tr>
-                 <tr id="trDatePaiement">
-                    <th class="first-child"><span >Echéance de paiement</span></th>
-                    <th class="second-child"><input type="datetime-local" id="datePaiement" class="datePaiement" />
-                     <i  id="iconMinusPaiement" class="fa-solid fa-circle-minus"></i></th>
-                 </tr>
-                 
-
-
-               </table>
-                  <i id="iAddTrDate" class="fa-solid fa-circle-plus"></i>
-
-           </div>
-          <!---------------- the dates END -->
-
-
-          <!---------------- Counting table start -->
-
-          <div class="box-counting-table">
-            <table id="tableCounting" class="counting-table">
-                <tr id="topTr">
-                    <th>Description</th>
-                    <th>Quantité</th>
-                    <th>Prix unitaire HT</th>
-                    <th>Prix total HT</th>
-                </tr>
-                <tr id="bottomTr">
-
-                    <th id="leftTh">
-                        <input type="text" placeholder="TITRE PRESTATION" >
-                        <input type="text" placeholder="Description prestation" >
-                    </th>
-                    <th>
-                        <input id="Quantite"  onkeyup="updateTotals()" onchange="updateTotals()" value="1" placeholder="00,0" type="number" >
-                    </th>
-                    <th id="thPrixUntair">
-                        <input id="unitaire" onkeyup="updateTotals()" onchange="updateTotals()" type="number" placeholder="00,0"  ><span> €</span>
-                    </th> 
-                    <th id="thPrixTotal">
-                      <small  id="total"  >0.00</small><span> €</span>
-                        <i id="iconMinusCoun" class="fa-solid fa-circle-minus"></i>
-                    </th>
-
-                </tr>
-            </table>
-            <i id="iAddTrCount" class="fa-solid fa-circle-plus"></i>
-
-        </div>
-        
-          <!---------------- Counting table END -->
-
-
-
-          <!---------------- Devis-table => start -->
-           <div class="devis-section">
-            <input class="input-devis" contenteditable="true" placeholder="informations complémentaires ">
-            
-              <table  class="devis-table">
-                 <tr id="trTotalHt" >
-                   <th class="first-child"><span >Total HT	</span></th>
-                   <th ><input type="number"  id="ht" value="0.00" readonly onkeyup="getTotal()"> <span> €</span> </th>                        
-                 </tr>
-                 <tr id="trTva" >
-                  <th class="first-child"><span >TVA (20,00 %)		</span></th>
-                  <th ><input id="tva" value="0.00" readonly onkeyup="getTotal()"> <span> €</span></th>                         
-                </tr> 
-                <tr id="trTtc" >
-                  <th class="first-child"><span class="ttc-span" >Total TTC	</span></th>
-                  <th ><input id="ttc" value="0.00" class="ttc-span" readonly  ><span class="ttc-span"> €</span> </th>
-                </tr>                       
-
-               </table>
-
-           </div>
-
-          <!---------------- Devis-table => End -->
-
-           
-      </div>
-   
+  <div class="container">
+    <!-- Export Controls -->
+    <div class="export-controls">
+      <button id="exportPdfBtn" class="export-btn">
+        <i class="fas fa-file-pdf"></i>
+        Export to PDF
+      </button>
+      <button id="printBtn" class="export-btn">
+        <i class="fas fa-print"></i>
+        Print
+      </button>
     </div>
-  
-   
 
+    <!-- start facture -->
+    <div class="facture-section" id="invoiceContent">
 
+      <div class="title-logo">
+        <div class="img">
+          <div class="img-box">
+            <img id="img"  />
+          </div>
+          <div id="uploadDiv" class="upload">
+            <label for="upload">Add Your Logo</label>
+            <input type="file" id="upload" />
+          </div>
+        </div>
+        <span id="title" contenteditable="true" ><h2 >Facture N°1</h2></span>
+      </div>
 
-    <script src="main.js"></script>
+        <!---------------- company-info start -->
+        <div class="company-information" id="companyInfo">
+          <input type="text" placeholder="Votre nom / société"><br>
+          <input type="text" placeholder="Adresse"><br>
+          <input type="text" placeholder="Code postal Ville"><br>
+          <span id="spanSiret">
+             <h4>Siret :</h4>
+             <input type="text" placeholder="000 000 000">
+             <i id="iSiret" class="fa-solid fa-circle-minus"></i>
+          </span>
+          <span id="spanTVA">
+             <h4>N° TVA :</h4>
+             <input type="text" placeholder="FR6543546843">
+             <i id="iTVA" class="fa-solid fa-circle-minus"></i>
+          </span>
+          <span id="spanTel">
+             <h4>Tél :</h4>
+             <input type="text" placeholder="+212........">
+             <i id="iTel" class="fa-solid fa-circle-minus"></i>
+          </span>
+          <span id="addSpan"></span>
+          <i id="iAddspan" class="fa-solid fa-circle-plus"></i>
+        </div>
+
+        <!---------------- client-info start -->
+        <div class="client-information">
+          <div class="box-client-info">
+             <input type="text" placeholder="Nom client">
+             <input type="text" placeholder="Adresse">
+             <input type="text" placeholder="Code postal Ville">
+             <span id="spanSiretClient">
+               <h4>Siret :</h4>
+               <input type="text" placeholder="*** *** ***">
+               <i id="iSiretClient" class="fa-solid fa-circle-minus"></i>
+             </span>
+             <span id="spanTélClient">
+               <h4>Tél :</h4>
+               <input type="text" placeholder="+2126........">
+               <i id="iTélClient" class="fa-solid fa-circle-minus"></i>
+             </span>
+             <span class="plus-client" id="addSpanClient"></span>
+             <i id="iAddspanClient" class="fa-solid fa-circle-plus"></i>
+          </div>
+        </div>
+
+        <!---------------- the dates start -->
+         <div class="box-date">
+            <table id="tableBody" class="date-table">
+               <tr id="trDateFacture" >
+                 <th class="first-child"><span >Date de facture</span></th>
+                 <th class="second-child"><input type="date" id="dateFacture" class="date-facture" />
+                         <i id="iconMinusFacture" class="fa-solid fa-circle-minus"  ></i></th>
+               </tr>
+               <tr id="trDateLivraison">
+                  <th class="first-child"><span >Date de livraison</span></th>
+                  <th class="second-child"><input type="datetime-local" id="dateLivraison" class="dateLivraison" />
+                         <i id="iconMinusLivraison" class="fa-solid fa-circle-minus"></i></th>
+               </tr>
+               <tr id="trDatePaiement">
+                  <th class="first-child"><span >Echéance de paiement</span></th>
+                  <th class="second-child"><input type="datetime-local" id="datePaiement" class="datePaiement" />
+                   <i  id="iconMinusPaiement" class="fa-solid fa-circle-minus"></i></th>
+               </tr>
+             </table>
+             <i id="iAddTrDate" class="fa-solid fa-circle-plus"></i>
+         </div>
+
+        <!---------------- Counting table start -->
+        <div class="box-counting-table">
+          <table id="tableCounting" class="counting-table">
+              <tr id="topTr">
+                  <th>Description</th>
+                  <th>Quantité</th>
+                  <th>Prix unitaire HT</th>
+                  <th>Prix total HT</th>
+              </tr>
+              <tr id="bottomTr">
+                  <th id="leftTh">
+                      <input type="text" placeholder="TITRE PRESTATION" >
+                      <input type="text" placeholder="Description prestation" >
+                  </th>
+                  <th>
+                      <input id="Quantite"  onkeyup="updateTotals()" onchange="updateTotals()" value="1" placeholder="00,0" type="number" >
+                  </th>
+                  <th id="thPrixUntair">
+                      <input id="unitaire" onkeyup="updateTotals()" onchange="updateTotals()" type="number" placeholder="00,0"  ><span> €</span>
+                  </th> 
+                  <th id="thPrixTotal">
+                    <small  id="total"  >0.00</small><span> €</span>
+                      <i id="iconMinusCoun" class="fa-solid fa-circle-minus"></i>
+                  </th>
+              </tr>
+          </table>
+          <i id="iAddTrCount" class="fa-solid fa-circle-plus"></i>
+      </div>
+
+        <!---------------- Devis-table => start -->
+         <div class="devis-section">
+          <input class="input-devis" contenteditable="true" placeholder="informations complémentaires ">
+            <table  class="devis-table">
+               <tr id="trTotalHt" >
+                 <th class="first-child"><span >Total HT	</span></th>
+                 <th ><input type="number"  id="ht" value="0.00" readonly onkeyup="getTotal()"> <span> €</span> </th>                        
+               </tr>
+               <tr id="trTva" >
+                <th class="first-child"><span >TVA (20,00 %)		</span></th>
+                <th ><input id="tva" value="0.00" readonly onkeyup="getTotal()"> <span> €</span></th>                         
+              </tr> 
+              <tr id="trTtc" >
+                <th class="first-child"><span class="ttc-span" >Total TTC	</span></th>
+                <th ><input id="ttc" value="0.00" class="ttc-span" readonly  ><span class="ttc-span"> €</span> </th>
+              </tr>                       
+             </table>
+         </div>
+    </div>
+  </div>
+
+    
+ <!-- Include jsPDF and html2canvas libraries -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+ <script src="main.js"></script>
 </body>
 </html>
